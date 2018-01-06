@@ -1,12 +1,6 @@
 
-<ul class="account-list">
-  {{#each model as |account|}}
-  <li class="account">
-    {{account.name}} - {{account.slug}} <br>
-    <span>{{account.exampleComputedProperty}}</span>
-  </li>
-  {{/each}}
-</ul>
+<p>Generate an account-list component and move the template into that component.</p>
 
+<p>Pass the 'model' data into the component as the 'accounts' parameter.</p>
 
-{{outlet}}
+{{account-list accounts=model}}
