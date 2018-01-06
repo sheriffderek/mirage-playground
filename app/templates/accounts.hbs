@@ -1,8 +1,19 @@
 
-<p>Try and go to the /accounts/create route</p>
+<h2>/accounts</h2>
 
-<p>You can't get there... can you...</p>
+<p>Create an index route. This would be a sub-route to 'application.'</p>
 
-<p>That's because... there is the 'replaceWith' / transition set in the 'application' route. Any time that you enter the <em>application</em> route, it will transition to /accounts</p>
+<p>Move the transitionTo - to that index...</p>
+
+<p>This way, the transition will only happen - if the router resolves to application/index</p>
+
+<p>(make sure there is an oulet in 'accounts.'</p>
+
+<p>Note some ember template divisions / layout view stuff - in CSS</p>
 
 {{account-list accounts=model}}
+
+
+<section>
+  <div class="outlet">{{outlet}}</div> {{!-- where sub-route templates will appear --}}
+</section>

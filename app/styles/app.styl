@@ -1,5 +1,6 @@
 
 $white = #FFFFFF
+$black = #000000
 $color = #25ACC2 // note the = instead of : for stylus variable declaration
 
 $pad = 10px
@@ -16,7 +17,27 @@ html
     margin-left: auto
     padding: $pad
 
+remove-list-styles()
+  list-style: none
+  margin: 0
+  padding: 0
+
 .account-list
+  remove-list-styles()
   .account
+    &:not(:first-of-type)
+      margin-top: $pad
     span
       opacity: .5
+
+.ember-view
+  border: 1px solid alpha($black, .2)
+  border-radius: $pad*.5
+  padding: $pad
+  margin-bottom: $pad
+
+.outlet, body > .ember-view
+  border: 3px solid alpha($white, .5)
+  border-radius: $pad*.5
+  padding: $pad
+  
