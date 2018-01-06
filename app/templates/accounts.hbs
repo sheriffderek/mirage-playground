@@ -2,7 +2,8 @@
 <ul class="account-list">
   {{#each model as |account|}}
   <li class="account">
-    {{account.name}}
+    {{account.name}} - {{account.slug}} <br>
+    <span>{{account.exampleComputedProperty}}</span>
   </li>
   {{/each}}
 </ul>
