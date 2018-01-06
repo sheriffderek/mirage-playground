@@ -7,7 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('accounts');
+  this.route('accounts', function() {
+    this.route('create');
+  });
   this.route('orders');
   this.route('products');
 });
