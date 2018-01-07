@@ -3,11 +3,29 @@
 
 <p>Create a different route for 'account-list' and 'account-detail' under 'accounts.</p>
 
-<p></p>
+<p>Note how the index files are a bit confusing...</p>
+
+<p>Create a route with a name 'list' or something / and set the path to '/'. --- or set /create to the root</p>
+
+<p>Add a bit of CSS</p>
+
+<p>Add some links to each route</p>
 
 {{account-list accounts=model}}
 
-{{link-to 'Create an account' 'accounts.create'}}
+<nav class="main-menu">
+  <ul class="item-list">
+    <li class="item">
+      {{link-to 'Create an account' 'accounts.create' class="link"}}
+    </li>
+    <li class="item">
+      {{link-to 'Account detail' 'accounts.detail' class="link"}}
+    </li>
+    <li class="item">
+      {{link-to 'Account-list' 'accounts.list' class="link"}}
+    </li>
+  </ul>
+</nav>
 
 <section>
   <div class="outlet">{{outlet}}</div> {{!-- where sub-route templates will appear --}}
