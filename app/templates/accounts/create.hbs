@@ -1,6 +1,10 @@
 
 <h3>/create</h3>
 
-{{input value=name placeholder="Input some text here..."}} {{!-- creates a 'name' property on the controller --}}
+{{input
+  id="name" 
+  value=model.name 
+  placeholder="Input some text here..."
+}}
 
-<em>Bound-data:</em> {{name}}
+<button {{action 'createAccount' model}}>Create account</button>
