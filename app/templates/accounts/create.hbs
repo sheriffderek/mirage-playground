@@ -1,10 +1,14 @@
 
 <h3>/create</h3>
 
-{{input
-  id="name" 
-  value=model.name 
-  placeholder="Input some text here..."
-}}
+<form {{action 'createAccount' model on='submit'}}>
+  
+  {{input
+    id="name" 
+    value=model.name 
+    placeholder="Input some text here..."
+  }}
 
-<button {{action 'createAccount' model}}>Create account</button>
+  <button type='submit'>Create account</button>
+</form>
+

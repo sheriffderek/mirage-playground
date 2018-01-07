@@ -10,6 +10,8 @@ export default DS.Model.extend({
     defaultValue: 'property added during model creation',
   }),
 
+  defaultPropertyFromRoute: DS.attr('string'),
+
   orders: DS.hasMany('order'),
 
   placeOrder() {
