@@ -1,17 +1,6 @@
 
 <h2>/accounts</h2>
 
-<p>Things are going well.. </p>
-
-<p>Refresh the page when on detail and note how the data doesn't populate. It isn't getting something specifically passed to it through a link-to / so it needs something in the model hook to help it find it's way.</p>
-
-<p>Since the accounts are all loaded... you don't need to 'findAll' - and you have a few choices. 1 would be to use 'peekRecord' - which doesn't check the database - and instead just references the internal store.</p>
-
-<p>(NOTE) that you might be on /4 - and since this is mirage... you are likely trolling yourself - because you refreshed and that record doesn't exist anymore. Try /2</p>
-
-<p>Refresh on one of the initially existing records to check...</p>
-
-
 <nav class="main-menu">
   <ul class="item-list">
     <li class="item">

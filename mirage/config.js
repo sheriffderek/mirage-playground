@@ -25,6 +25,9 @@ export default function() {
   */
 
   this.get('/accounts');
-  this.get('/accounts/:id');
   this.post('/accounts');
+  this.get('/accounts/:id');
+  this.del('/accounts');
+  
+
 }

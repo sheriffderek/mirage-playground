@@ -10,5 +10,7 @@ export default DS.Model.extend({
 
   orders: DS.hasMany('order'),
 
+  remove() { // this is where I want to deal with the 'account'
+    console.log(`deleteAccount() in 'account' model`);
   },
 });

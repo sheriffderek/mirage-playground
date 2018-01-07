@@ -2,8 +2,14 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
 
-  model(urlParameters) { // these come from the dynamic segments
-    return this.store.peekRecord('account', urlParameters.id);
-    // use the id to match up with the dynamic segment and find the correct record in the store
+  model(urlParameters) {
+    return this.store.findRecord('account', urlParameters.id);
+  },
+
+  actions: {
+    deleteAccount(account) { // takes in model...
+      // uses function on the model to do model things
+      account.remove(account);
+    },
   },
 });
