@@ -2,6 +2,10 @@
 {{#each accounts as |account|}}
   <li class="account">
     {{account.name}}
-    <div><em>{{account.slug}}</em></div>
+
+    {{#link-to 'accounts.detail' account}}
+      {{account.slug}}
+    {{/link-to}}
+
   </li>
 {{/each}}

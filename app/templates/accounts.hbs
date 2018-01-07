@@ -1,17 +1,20 @@
 
 <h2>/accounts</h2>
 
-<p>This page is kinda long... and it's strange to see the account populate in the list... and - it's not great for small screen...</p>
+<p>Things aren't working that well...</p>
 
-<p>Move the account-list to the 'list' template instead</p>
+<p>The top level navigation link for 'detail' doesn't really make sense. That template is supposed to be used for <em>any</em> account we pass to it... and it needs to know how to function.</p>
+
+<p>Add a "dynamic segment" to the router.</p>
+
+<p>Add links to list and as a second argument - include the model as a way to know what to pass to the child template. (in this case - it will use the id) // be aware of the underscore thing... account_id - will try and help you / but will also make things more mysterious...</p>
+
+<p>Do the same with the transitionTo in the create method.</p>
 
 <nav class="main-menu">
   <ul class="item-list">
     <li class="item">
       {{link-to 'Create an account' 'accounts.create' class="link"}}
-    </li>
-    <li class="item">
-      {{link-to 'Account detail' 'accounts.detail' class="link"}}
     </li>
     <li class="item">
       {{link-to 'Account-list' 'accounts.list' class="link"}}

@@ -11,7 +11,7 @@ Router.map(function() {
   this.route('accounts', function() {
     // this.route('index'); // this is implicit (but that is confusing...)
     this.route('create', {path: '/'});
-    this.route('detail');
+    this.route('detail', {path: '/:id'});
     this.route('list');
   });
   this.route('orders');
