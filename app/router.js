@@ -16,6 +16,7 @@ Router.map(function() {
   });
   this.route('orders');
   this.route('products');
+  this.route('wild-card', {path: '/*wildcard'});
 });
 
 export default Router;
