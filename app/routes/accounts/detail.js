@@ -7,9 +7,12 @@ export default Route.extend({
   },
 
   actions: {
-    deleteAccount(account) { // takes in model...
-      // uses function on the model to do model things
-      account.remove(account);
+    deleteAccount(account) {
+      account.remove()
+        .then( ()=> {
+          this.transitionTo('accounts.list');
+        })
+      ;
     },
   },
 });

@@ -15,6 +15,7 @@ export default DS.Model.extend({
   },
 
   remove() { // this is where I want to deal with the 'account'
-    console.log(`deleteAccount() in 'account' model`);
+    console.log(`remove() in 'account' model`);
+    return this.destroyRecord(); // talk about delete record here...
   },
 });
