@@ -17,7 +17,7 @@ export default Route.extend({
       account.save()
         .then( (post)=> {
           console.log(`"${post.data.name}" account was created.`); // $question - why 'data' here?
-          this.transitionTo('accounts');
+          this.transitionTo('accounts.detail');
         })
         .catch( (error)=> {
           console.log(`catch error: ${error.message}`);
