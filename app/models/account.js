@@ -6,6 +6,10 @@ export default DS.Model.extend({
     return this.get('name').dasherize();
   }),
 
+  defaultPropertyFromModel: DS.attr('string', {
+    defaultValue: 'property added during model creation',
+  }),
+
   orders: DS.hasMany('order'),
 
   placeOrder() {

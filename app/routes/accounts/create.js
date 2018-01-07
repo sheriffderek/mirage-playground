@@ -3,17 +3,24 @@ import Route from '@ember/routing/route';
 export default Route.extend({
 
   model() {
+    // $help - this returns a 'record' - but if you don't transition from that route... what would you do? This record is created whether or not it is saved... is that ok?
     return this.store.createRecord('account', {
-      defaultPropertyFromRoute: 'from-route',
+      defaultPropertyFromRoute: 'property added during record creation', // $help - this isn't adding the property
     });
   },
 
   actions: {
     createAccount(account) {
       account.save()
-        .then( (account)=> {
-          console.log(account.name + ' was created');
+        .then( (post)=> {
+          console.log(`"${post.data.name}" account was created.`); // $help - why 'data' here?
           this.transitionTo('accounts');
+        })
+        .catch( (error)=> {
+          console.log(`catch error: ${error.message}`);
+        })
+        .finally( ()=> {
+          console.log(`createAccount(account) complete`);
         })
       ;
     },
