@@ -2,12 +2,14 @@
 <h3>/create</h3>
 
 <form {{action 'createAccount' model on='submit'}}>
-  
-  {{input
-    id="name" 
-    value=model.name 
-    placeholder="Input some text here..."
-  }}
+
+  {{#focused-input}}
+    {{input
+      class="name focused" 
+      value=model.name 
+      placeholder="Input some text here..."
+    }}
+  {{/focused-input}}
 
   <button type='submit'>Create account</button>
 </form>
