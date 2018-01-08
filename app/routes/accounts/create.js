@@ -8,7 +8,7 @@ export default Route.extend({
       name: ``, // $question - likely related to the above... see dasherize error
       // if I don't use it in the template... it's fine - and I wouldn't actually use it in the template...
       // name doesn't exist yet... so the computed slug trying to access a non-existant property
-      // $question - 
+      // $question - this creates an 'account' "instance"? every time you enter this route? That doesn't sound good....
     });
   },
 
