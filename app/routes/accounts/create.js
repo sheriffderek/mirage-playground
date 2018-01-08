@@ -14,7 +14,7 @@ export default Route.extend({
 
   actions: {
     createAccount(account) {
-      account.add()
+      account.add() // uses the function from the 'account' model... ( is add() too simple? )
         .then( (account)=> {
           console.log(`"${account.data.name}" account was created.`); // $question - why 'data' here?
           this.transitionTo('accounts.detail', account); // send them to the page - with the model to set the id in the dymanic segment
