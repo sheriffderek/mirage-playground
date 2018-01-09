@@ -1,0 +1,12 @@
+
+<h3>/list</h3>
+
+<ul class='order-list'>
+  {{#each model as |order|}}
+  <li class='order'>
+    {{#link-to 'orders.detail' order}}
+      <span>#{{order.id}}</span>
+    {{/link-to}}
+  </li>
+  {{/each}}
+</ul>

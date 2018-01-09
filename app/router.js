@@ -15,7 +15,10 @@ Router.map(function() {
     this.route('list');
     // this.route('error'); // $question - wildcard for dynamic 404 vs error...
   });
-  this.route('orders');
+  this.route('orders', function() {
+    this.route('list', {path: '/'});
+    this.route('detail', {path: '/:id'}); // $question - this double :id (using it twice) can be a problem... how can I clearly demonstrate that?
+  });
   this.route('products');
   this.route('wild-card', {path: '/*wildcard'});
 });

@@ -4,6 +4,23 @@
 
   <h1>/application</h1>
 
+  <nav class="main-menu">
+    <ul class="item-list">
+      <li class="item">
+        {{link-to 'Account list' 'accounts.list' class="link"}}
+      </li>
+      <li class="item">
+        {{link-to 'Order list' 'orders.list' class="link"}}
+      </li>
+    </ul>
+  </nav>
+
+  <p>Create the same setup for 'order' list/detail etc.</p>
+
+  <p>Note: check on a good example for duplicate dymanic id's</p>
+
+  <p>Also note - if you think /list and /list - gets confusing... (in sublime... a fuzzy search of acclis or ordlis - will pull them right up...)</p>
+
 </div>
 </header>
 
@@ -14,7 +31,7 @@
 
   <p></p>
 
-  <div class="outlet">{{outlet}}</div>
+  <div class="outlet application-outlet">{{outlet}}</div>
 
 </div>
 </section>
