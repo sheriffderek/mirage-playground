@@ -9,8 +9,8 @@ export default DS.Model.extend({
   products: DS.hasMany('product'),
   date: DS.attr('date'),
 
-  statusCode: DS.attr('string'),
-  statusMessage: Ember.computed('statusCode', function() {
+  statusCode: DS.attr('string', {defaultValue: 1}),
+  statusMessage: Ember.computed('statusCode', function() { // $question - why doesn't this evaluate with the model defaultValue?
     const code = this.get('statusCode');
     if (code === 2) {
       return `Order refunded`;

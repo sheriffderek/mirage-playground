@@ -28,18 +28,22 @@ export default function(server) {
 
   var a = server.create('order', {
     number: 89473986,
+    date: new Date(),
   });
 
   var b = server.create('order', {
     number: 230894,
+    date: new Date(),
   });
 
   var c = server.create('order', {
     number: 2349876,
+    date: new Date(),
   });
 
   var d = server.create('order', {
     number: 342349,
+    date: new Date(),
   });
 
 }
