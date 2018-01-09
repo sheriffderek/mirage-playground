@@ -9,8 +9,23 @@ export default DS.Model.extend({
   products: DS.hasMany('product'),
   date: DS.attr('date'),
 
+  statusCode: DS.attr('string'),
+  statusMessage: Ember.computed('statusCode', function() {
+    const code = this.get('statusCode');
+    if (code === 2) {
+      return `Order refunded`;
+    } else {
+      return ``;
+    }
+  }),
+
   refund() {
-    alert('Confirmation for refunding this order');
+    // alert('Confirmation for refunding this order');
+    return this.set('statusCode', 2);
+  },
+
+  resendInvoice() {
+    alert('Invoice sent to {insert account email address}');
   },
 
   // refund: function() { // make a note of es2015 function syntax...

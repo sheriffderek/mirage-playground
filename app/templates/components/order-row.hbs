@@ -1,6 +1,6 @@
 
 <header>
-  #{{order.id}}
+  #{{order.id}} {{order.statusMessage}}
 </header>
 
 <footer class="actions">
@@ -8,7 +8,7 @@
     <span>Refund order</span>
   </button>
 
-  <button>
+  <button {{action 'resendInvoice' order}}>
     <span>Resend invoice</span>
   </button>
 
