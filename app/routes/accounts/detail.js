@@ -8,9 +8,16 @@ export default Route.extend({
 
   actions: {
     deleteAccount(account) {
-      account.remove()
-        .then( ()=> {
+      account.remove(account)
+        .then( ()=> { // $question -
+          console.log('then...');
           this.transitionTo('accounts.list');
+        })
+        .catch( ()=> {
+          console.log('catch......');
+        })
+        .finally( ()=> {
+          console.log('finally...');
         })
       ;
     },
