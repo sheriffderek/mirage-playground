@@ -34,7 +34,8 @@ remove-list-styles()
   border: 1px solid alpha($black, .2)
   border-radius: $pad*.5
   padding: $pad
-  margin-bottom: $pad
+  &:not(.link)
+    margin-bottom: $pad
 
 .outlet, body > .ember-view
   border: 3px solid alpha($white, .5)
@@ -55,3 +56,17 @@ em
 
 .focused-input
   display: inline-block
+
+.order-row
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  .actions
+    display: flex
+    flex-direction: row
+    align-items: center
+    button, .link
+      padding-left: $pad
+    .link
+      display: inline-block

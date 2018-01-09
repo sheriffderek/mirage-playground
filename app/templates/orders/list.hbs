@@ -4,9 +4,7 @@
 <ul class='order-list'>
   {{#each model as |order|}}
   <li class='order'>
-    {{#link-to 'orders.detail' order}}
-      <span>#{{order.id}}</span>
-    {{/link-to}}
+    {{order-row order=order}} {{!-- note that this is not great on the eyes a=a --}}
   </li>
   {{/each}}
 </ul>

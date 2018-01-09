@@ -8,4 +8,12 @@ export default DS.Model.extend({
   account: DS.belongsTo('account'),
   products: DS.hasMany('product'),
   date: DS.attr('date'),
+
+  refund() {
+    alert('Confirmation for refunding this order');
+  },
+
+  // refund: function() { // make a note of es2015 function syntax...
+
+  // },
 });

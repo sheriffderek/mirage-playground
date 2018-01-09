@@ -1,0 +1,18 @@
+
+<header>
+  #{{order.id}}
+</header>
+
+<footer class="actions">
+  <button {{action 'refundOrder' order}}>
+    <span>Refund order</span>
+  </button>
+
+  <button>
+    <span>Resend invoice</span>
+  </button>
+
+  {{#link-to 'orders.detail' order class="link"}}
+    <span>#{{order.id}}</span>
+  {{/link-to}}
+</footer>
