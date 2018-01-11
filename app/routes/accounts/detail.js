@@ -2,8 +2,10 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
 
+  // store: injected into routes by default
+
   model(urlParameters) {
-    return this.store.findRecord('account', urlParameters.id);
+    return this.get('store').findRecord('account', urlParameters.id);
   },
 
   actions: {

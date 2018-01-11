@@ -2,7 +2,9 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
 
+  // store: injected into routes by default
+
   model() {
-    return this.store.findAll('order');
+    return this.get('store').findAll('order');
   },
 });
