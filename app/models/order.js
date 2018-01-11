@@ -27,8 +27,4 @@ export default DS.Model.extend({
   resendInvoice() {
     alert('Invoice sent to {insert account email address}');
   },
-
-  // refund: function() { // make a note of es2015 function syntax...
-
-  // },
 });
