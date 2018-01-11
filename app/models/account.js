@@ -14,9 +14,9 @@ export default DS.Model.extend({
     return this.save(); // return so we can work off of the promise in the route
   },
 
-  remove(model) { // this is where I want to deal with the 'account'
-    console.log(`remove() in 'account' model`);
-    const userConfirmed = confirm(`Are you sure you want to delete the ${model.data.name} record?`);
+  remove(account) { // this is where I want to deal with the 'account'
+    console.log(`remove() in 'account' account`);
+    const userConfirmed = confirm(`Are you sure you want to delete the ${account.data.name} record?`);
     if (userConfirmed) {
       return this.destroyRecord(); // talk about delete record here...
     }
