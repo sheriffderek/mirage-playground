@@ -20,11 +20,11 @@ export default DS.Model.extend({
   }),
 
   refund() {
-    // alert('Confirmation for refunding this order');
+    alert(`Send PATCH request to update this order as 'refunded' + do the refunding`);
     return this.set('statusCode', 2);
   },
 
   resendInvoice() {
-    alert('Invoice sent to {insert account email address}');
+    alert('Invoice {invoice number} sent to {account email}');
   },
 });
