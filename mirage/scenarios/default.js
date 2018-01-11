@@ -11,16 +11,22 @@ export default function(server) {
 
   var krishen = server.create('account', {
     name: `Krishen Kotecha`,
+    email: `krishenk@chromadex.com`,
+    password: `password`,
     orders: [a, d],
   });
 
   var joe = server.create('account', {
     name: `Joe Sprankle`,
+    email: `joes@chromadex.com`,
+    password: `password`,
     orders: [b],
   });
 
   var sheriff = server.create('account', {
     name: `Sheriff Derek`,
+    email: `derekw@chromadex.com`,
+    password: `password`,
     orders: [c],
   });
 

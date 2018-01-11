@@ -8,6 +8,8 @@ export default DS.Model.extend({
     return this.get('name').dasherize();
   }),
 
+  email: DS.attr('string'),
+
   orders: DS.hasMany('order'),
 
   add() {

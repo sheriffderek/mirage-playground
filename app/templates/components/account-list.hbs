@@ -1,11 +1,14 @@
 
 {{#each accounts as |account|}}
   <li class="account">
-    {{account.name}}
+    <h4>{{account.name}}</h4>
 
-    {{#link-to 'accounts.detail' account}}
-      {{account.slug}}
-    {{/link-to}}
+    <div class="actions">
+      {{#link-to 'accounts.detail' account}}
+        {{account.slug}}
+      {{/link-to}}
 
+      <button {{action 'accountSignIn' account}}>Sign In</button>
+    </div>
   </li>
 {{/each}}
