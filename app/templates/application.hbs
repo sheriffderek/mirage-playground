@@ -7,7 +7,7 @@
   {{#if session.currentUser}}
     <div>You are logged in as {{session.currentUser.name}} <button {{action 'accountSignOut'}}>Sign out</button></div>
   {{else}}
-    <div>Sign in</div>
+    <div>{{link-to 'Sign in' 'accounts.list'}}</div>
   {{/if}}
 
   <nav class="main-menu">
