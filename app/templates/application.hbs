@@ -1,13 +1,13 @@
 
-<header class="page-section site-header">
+{{site-header}}
+
+<header class="page-section page-header">
 <div class="inner-w">
 
-  <h1>/application</h1>
+  {{!-- <h1>/application</h1> --}}
 
   {{#if session.currentUser}}
     <div>You are logged in as {{session.currentUser.name}} <button {{action 'accountSignOut'}}>Sign out</button></div>
-  {{else}}
-    <div>{{link-to 'Sign in' 'accounts.list'}}</div>
   {{/if}}
 
   <nav class="main-menu">

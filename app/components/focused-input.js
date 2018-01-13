@@ -1,5 +1,5 @@
 import Component from '@ember/component';
-import $ from 'jquery';
+// import $ from 'jquery'; // $question
 
 export default Component.extend({
   tagName: 'div',

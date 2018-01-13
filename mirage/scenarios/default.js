@@ -29,6 +29,7 @@ export default function(server) {
     password: `password`,
     orders: [c],
   });
+  server.createList('account', 20);
 
 
 

@@ -2,12 +2,17 @@
 $white = #FFFFFF
 $black = #000000
 $color = #25ACC2 // note the = instead of : for stylus variable declaration
+$highlight = red
 
 $pad = 10px
 
 html
-  background: $color
+  background: $black
   color: $white
+
+body
+  background: $color
+  padding-top: $pad*6.5 // height of .site-header.outerHeight()
 
 .page-section
   //
@@ -15,7 +20,7 @@ html
     max-width: 1200px
     margin-right: auto
     margin-left: auto
-    padding: $pad
+    padding: $pad*.5
 
 remove-list-styles()
   list-style: none
@@ -27,27 +32,49 @@ remove-list-styles()
   .account
     &:not(:first-of-type)
       margin-top: $pad
-    span
-      opacity: .5
+    a
+      color: $black
 
 .ember-view
   border: 1px solid alpha($black, .2)
   border-radius: $pad*.5
-  padding: $pad
-  &:not(.link)
+  padding: $pad*.25
+  &:not('.link')
     margin-bottom: $pad
 
 .outlet, body > .ember-view
   border: 3px solid alpha($white, .5)
   border-radius: $pad*.5
-  padding: $pad
+  padding: $pad*.5
 
 a
   display: block
-  color: purple
+  color: $highlight
+  &:visited
+    color: @color
 
 em
   opacity: .5
+
+
+
+
+.site-header
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  background: alpha($black, 0)
+  color: $white
+  transition: background .5s
+  &.scrolled
+    background: alpha(@background, 1)
+  .inner-w
+    display: flex
+    flex-direction: row
+
+
+
 
 .main-menu
   .item-list
@@ -68,6 +95,10 @@ em
 
 .focused-input
   display: inline-block
+
+input[type='text']
+  padding: $pad*.5 $pad
+
 
 .order-row
   display: flex
