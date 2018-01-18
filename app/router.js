@@ -20,6 +20,9 @@ Router.map(function() {
     this.route('detail', {path: '/:id'}); // $question - this double :id (using it twice) can be a problem... how can I clearly demonstrate that?
   });
   this.route('products');
+
+  this.route('surface-area');
+
   this.route('wild-card', {path: '/*wildcard'});
 });
 

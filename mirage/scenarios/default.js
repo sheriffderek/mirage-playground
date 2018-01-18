@@ -53,4 +53,66 @@ export default function(server) {
     date: new Date(),
   });
 
+
+  server.create('area', {
+    value: 10,
+  });
+  server.create('area', {
+    value: 70,
+  });
+  server.create('area', {
+    value: 17,
+  });
+  server.create('area', {
+    value: 30,
+  });
+  server.create('area', {
+    value: 80,
+  });
+  server.create('area', {
+    value: 20,
+  });
+  server.create('area', {
+    value: 70,
+  });
+  server.create('area', {
+    value: 37,
+  });
+  server.create('area', {
+    value: 40,
+  });
+  server.create('area', {
+    value: 95,
+  });
+  server.create('area', {
+    value: 10,
+  });
+  server.create('area', {
+    value: 70,
+  });
+  server.create('area', {
+    value: 17,
+  });
+  server.create('area', {
+    value: 30,
+  });
+  server.create('area', {
+    value: 80,
+  });
+  server.create('area', {
+    value: 20,
+  });
+  server.create('area', {
+    value: 70,
+  });
+  server.create('area', {
+    value: 37,
+  });
+  server.create('area', {
+    value: 40,
+  });
+  server.create('area', {
+    value: 90,
+  });
+
 }

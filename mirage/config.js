@@ -32,5 +32,5 @@ export default function() {
   this.get('/orders');
   this.get('/orders/:id');
 
-
+  this.get('/areas');
 }

@@ -2,7 +2,7 @@
 $white = #FFFFFF
 $black = #000000
 $color = #25ACC2 // note the = instead of : for stylus variable declaration
-$highlight = red
+$highlight = yellow
 
 $pad = 10px
 
@@ -72,6 +72,7 @@ em
   .inner-w
     display: flex
     flex-direction: row
+    align-items: center
 
 
 
@@ -91,7 +92,7 @@ em
     display: flex
     flex-direct: row
     align-items: center
-    
+
 
 .focused-input
   display: inline-block
@@ -113,3 +114,38 @@ input[type='text']
       padding-left: $pad
     .link
       display: inline-block
+
+
+.area-list
+  remove-list-styles()
+  display: flex
+  flex-direction: row
+  align-items: flex-end
+  height: 400px
+  .area
+    position: relative
+    // border: 1px solid red
+    transition: 1s
+    .indicator
+      display: block
+      content: 0
+      width: 16px
+      height: 16px
+      background: white
+      border-radius: 50%
+      position: absolute
+      top: 0
+      left: 50%
+      transform: translate(-50%, -50%)
+    &.good
+      .indicator
+        background: lightgreen
+    &.great
+      .indicator
+        background: pink
+    &.mediocre
+      .indicator
+        background: orange
+    &.unacceptable
+      .indicator
+        background: red
