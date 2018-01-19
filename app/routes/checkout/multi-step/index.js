@@ -3,8 +3,6 @@ import Route from '@ember/routing/route';
 export default Route.extend({
 
   beforeModel() {
-    this.replaceWith('product-detail');
-    // this.transitionTo('accounts');
+    this.replaceWith('checkout.multi-step.contact-email');
   },
-
 });

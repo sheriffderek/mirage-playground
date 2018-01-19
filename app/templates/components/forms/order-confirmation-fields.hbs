@@ -1,0 +1,25 @@
+
+<header>
+  <h2>Order confirmation</h2>
+</header>
+
+<main>
+  <p>Order information to be here...</p>
+  <ul class="shit-list">
+    <li class="shit">
+      {{order.emailAddress}}
+    </li>
+    <li class="shit">
+      {{order.shippingFirstName}}
+    </li>
+    <li class="shit">
+      {{order.shippingLastName}}
+    </li>
+  </ul>
+</main>
+
+<footer>
+  <button {{action 'printOrder' order}}>
+    <span>Place order</span>
+  </button>
+</footer>

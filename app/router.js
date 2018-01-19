@@ -24,6 +24,16 @@ Router.map(function() {
   this.route('surface-area');
 
   this.route('wild-card', {path: '/*wildcard'});
+  this.route('product-detail');
+  this.route('checkout', function() {
+    this.route('standard');
+    this.route('multi-step', function() {
+      this.route('contact-email');
+      this.route('shipping-name');
+      this.route('order-confirmation');
+    });
+    this.route('thank-you');
+  });
 });
 
 export default Router;

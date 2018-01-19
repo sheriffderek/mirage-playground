@@ -1,0 +1,21 @@
+
+<header>
+  <h3>Contact</h3>
+</header>
+
+<main>
+  <ul class="thing-list">
+    <li class="thing">
+      <label for="contact_email">
+        <span class="label">Email address</span>
+        {{input id="contact_email" value=order.emailAddress}}
+      </label>
+    </li>
+  </ul>
+</main>
+
+{{#if multi-step}}
+  <footer>
+    {{forms/next-button destination='checkout.multi-step.shipping-name'}}
+  </footer>
+{{/if}}

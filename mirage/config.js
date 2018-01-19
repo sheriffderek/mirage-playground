@@ -30,7 +30,9 @@ export default function() {
   this.del('/accounts/:id');
 
   this.get('/orders');
+  this.post('/orders');
   this.get('/orders/:id');
+  this.patch('/orders/:id');
 
   this.get('/areas');
 }

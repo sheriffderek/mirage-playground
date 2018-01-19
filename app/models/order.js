@@ -20,6 +20,14 @@ export default DS.Model.extend({
     }
   }),
 
+  emailAddress: DS.attr(),
+  shippingFirstName: DS.attr(),
+  shippingLastName: DS.attr(),
+
+  place() {
+    return this.save();
+  },
+
   refund() {
     alert(`Send PATCH request to update this order as 'refunded' + do the refunding`);
     return this.set('statusCode', 2);

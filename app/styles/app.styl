@@ -125,7 +125,8 @@ input[type='text']
   .area
     position: relative
     // border: 1px solid red
-    transition: 1s
+    transition: .5s
+    border-color: alpha($black, .04)
     .indicator
       display: block
       content: 0
@@ -137,10 +138,11 @@ input[type='text']
       top: 0
       left: 50%
       transform: translate(-50%, -50%)
+      transition: .5s
     &.good
       .indicator
         background: lightgreen
-    &.great
+    &.exceptional
       .indicator
         background: pink
     &.mediocre
@@ -149,3 +151,17 @@ input[type='text']
     &.unacceptable
       .indicator
         background: red
+        
+fieldset
+  .thing-list
+    remove-list-styles()
+  label
+    display: block
+    .label, input
+      display: block
+  header
+    color: blue
+  main
+    //
+  footer
+    margin-top: $pad*2

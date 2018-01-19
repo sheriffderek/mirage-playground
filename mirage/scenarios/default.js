@@ -55,37 +55,37 @@ export default function(server) {
 
 
   server.create('area', {
+    value: 0,
+  });
+  server.create('area', {
     value: 10,
-  });
-  server.create('area', {
-    value: 70,
-  });
-  server.create('area', {
-    value: 17,
-  });
-  server.create('area', {
-    value: 30,
-  });
-  server.create('area', {
-    value: 80,
   });
   server.create('area', {
     value: 20,
   });
   server.create('area', {
-    value: 70,
-  });
-  server.create('area', {
-    value: 37,
+    value: 30,
   });
   server.create('area', {
     value: 40,
   });
   server.create('area', {
-    value: 95,
+    value: 50,
   });
   server.create('area', {
-    value: 10,
+    value: 60,
+  });
+  server.create('area', {
+    value: 70,
+  });
+  server.create('area', {
+    value: 80,
+  });
+  server.create('area', {
+    value: 90,
+  });
+  server.create('area', {
+    value: 100,
   });
   server.create('area', {
     value: 70,

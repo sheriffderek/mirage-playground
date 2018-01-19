@@ -1,0 +1,28 @@
+
+<header>
+  <h3>Shipping name</h3>
+</header>
+
+<main>
+  <ul class="thing-list">
+    <li class="thing">
+      <label for="shipping_first_name">
+        <span class="label">First name</span>
+        {{input id="shipping_first_name" value=order.shippingFirstName}}
+      </label>
+    </li>
+
+    <li>
+      <label for="shipping_last_name">
+        <span class="label">Last name name</span>
+        {{input id="shipping_last_name" value=order.shippingLastName}}
+      </label>
+    </li>
+  </ul>
+</main>
+
+{{#if multi-step}}
+  <footer>
+    {{forms/next-button destination='checkout.multi-step.order-confirmation'}}
+  </footer>
+{{/if}}
