@@ -1,14 +1,10 @@
 
 <h3>/standard</h3>
 
-{{outlet}}
-
-<form>
-  
-  {{forms/contact-email-fields order=model}}
-
-  {{forms/shipping-name-fields order=model}}
-
-  {{forms/order-confirmation-fields order=model}}
-
-</form>
+{{#with (changeset model (action "validate")) as |changeset|}}
+  {{forms/full-form 
+    changeset=changeset
+    submit=(action "submit")
+    rollback=(action "rollback")
+  }}
+{{/with}}

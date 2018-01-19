@@ -1,8 +1,10 @@
 
 <h3>/list</h3>
 
+{{log 'm' model}}
+
 <ul class='order-list'>
-  {{#each model as |order|}}
+  {{#each officialOrders as |order|}}
   <li class='order'>
     {{order-row order=order}} {{!-- note that this is not great on the eyes a=a --}}
   </li>

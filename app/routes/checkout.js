@@ -4,7 +4,7 @@ export default Route.extend({
 
   model() {
     return this.get('store').createRecord('order', {
-      date: new Date(),
+      date: new Date(), // for fun
     });
   },
 });

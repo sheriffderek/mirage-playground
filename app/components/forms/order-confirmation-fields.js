@@ -12,17 +12,13 @@ export default Component.extend({
   // Actions
   actions: {
     printOrder(order) {
-      order.place()
+      console.log('order: ', order);
+    },
+    saveOrder(order) {
+      var betterNameHere = this;
+      return order.save()
         .then( function(response) {
-          
-          return this.get('router').transitionTo('thank-you');
-          console.log('x', response);
-        })
-        .catch( function(response) {
-          //
-        })
-        .finally( function() {
-          //
+          betterNameHere.get('router').transitionTo('orders');
         })
       ;
     },

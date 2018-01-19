@@ -1,25 +1,29 @@
 
 <header>
-  <h2>Order confirmation</h2>
+  <h3>Order confirmation</h3>
 </header>
 
 <main>
   <p>Order information to be here...</p>
   <ul class="shit-list">
     <li class="shit">
-      {{order.emailAddress}}
+      {{model.emailAddress}}
     </li>
     <li class="shit">
-      {{order.shippingFirstName}}
+      {{model.shippingFirstName}}
     </li>
     <li class="shit">
-      {{order.shippingLastName}}
+      {{model.shippingLastName}}
     </li>
   </ul>
 </main>
 
 <footer>
   <button {{action 'printOrder' order}}>
-    <span>Place order</span>
+    <span>Print order</span>
+  </button>
+
+  <button {{action 'saveOrder' order}}>
+    <span>Save order</span>
   </button>
 </footer>
