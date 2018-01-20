@@ -166,3 +166,31 @@ fieldset
     //
   footer
     margin-top: $pad*2
+
+
+remove-button-styles()
+  margin: 0
+  padding: 0
+  outline: 0
+  border: 0
+  border-radius: 0
+  background: transparent
+  font-family: inherit
+  font-weight: inherit
+  letter-spacing: inherit
+  
+button()
+  remove-button-styles()
+  min-width: 200px
+  padding: $pad $pad*2
+  background: $highlight
+  border-radius: $pad*.5
+  span
+    &:after
+      content: ' >'
+  &:focus
+    background: wheat
+  
+  
+.button
+  button()

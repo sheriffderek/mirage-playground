@@ -1,12 +1,10 @@
 
 <h3>/list</h3>
 
-{{log 'm' model}}
-
 <ul class='order-list'>
-  {{#each officialOrders as |order|}}
+  {{#each ordersByDate as |order|}}
   <li class='order'>
-    {{order-row order=order}} {{!-- note that this is not great on the eyes a=a --}}
+    {{order-row order=order}} {{!-- note that this is not great on the eyes a=a but also making a new name up 4 times isn't great either --}}
   </li>
   {{/each}}
 </ul>

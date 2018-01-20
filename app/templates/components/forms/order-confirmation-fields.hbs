@@ -5,15 +5,19 @@
 
 <main>
   <p>Order information to be here...</p>
-  <ul class="shit-list">
-    <li class="shit">
-      {{model.emailAddress}}
+
+  <ul class="detail-list">
+    <li class="detail">
+      <span>Date: </span>{{order.date}}
     </li>
-    <li class="shit">
-      {{model.shippingFirstName}}
+    <li class="detail">
+      Email: {{order.emailAddress}}
     </li>
-    <li class="shit">
-      {{model.shippingLastName}}
+    <li class="detail">
+      firstName: {{order.shippingFirstName}}
+    </li>
+    <li class="detail">
+      lastName: {{order.shippingLastName}}
     </li>
   </ul>
 </main>
@@ -23,7 +27,7 @@
     <span>Print order</span>
   </button>
 
-  <button {{action 'saveOrder' order}}>
+  <button class="button" {{action 'saveOrder' order}}>
     <span>Save order</span>
   </button>
 </footer>

@@ -24,6 +24,8 @@ export default DS.Model.extend({
   shippingFirstName: DS.attr(),
   shippingLastName: DS.attr(),
 
+  refunded: Ember.computed.equal('statusCode', 2),
+
   place() {
     return this.save();
   },

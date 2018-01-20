@@ -4,9 +4,11 @@
 </header>
 
 <footer class="actions">
+  {{#unless order.refunded}}
   <button {{action 'refundOrder' order}}>
     <span>Refund order</span>
   </button>
+  {{/unless}}
 
   <button {{action 'resendInvoice' order}}>
     <span>Resend invoice</span>

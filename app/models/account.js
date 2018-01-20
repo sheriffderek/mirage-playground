@@ -2,7 +2,14 @@ import DS from 'ember-data';
 import Ember from 'ember';
 
 export default DS.Model.extend({
-  name: DS.attr('string', /*{defaultValue: ''}*/),
+
+  firstName: DS.attr('string'),
+  lastName: DS.attr('string'),
+
+
+  name: Ember.computed('firstName', 'lastName', function() {
+    return `${this.get('firstName')} ${this.get('lastName')}`;
+  }),
 
   slug: Ember.computed('name', function() {
     return this.get('name').dasherize();

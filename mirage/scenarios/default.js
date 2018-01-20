@@ -7,10 +7,10 @@ export default function(server) {
 
   // server.createList('post', 10);
 
-
-
   var krishen = server.create('account', {
     name: `Krishen Kotecha`,
+    firstName: `krishen`,
+    lastName: `Kotecha`,
     email: `krishenk@chromadex.com`,
     password: `password`,
     orders: [a, d],
@@ -18,18 +18,22 @@ export default function(server) {
 
   var joe = server.create('account', {
     name: `Joe Sprankle`,
+    firstName: `Joe`,
+    lastName: `Sprankle`,
     email: `joes@chromadex.com`,
     password: `password`,
     orders: [b],
   });
 
   var sheriff = server.create('account', {
-    name: `Sheriff Derek`,
+    name: `Derek Wood`,
+    firstName: `Derek`,
+    lastName: `Wood`,
     email: `derekw@chromadex.com`,
     password: `password`,
     orders: [c],
   });
-  server.createList('account', 20);
+  // server.createList('account', 20);
 
 
 
