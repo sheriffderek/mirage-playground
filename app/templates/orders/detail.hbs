@@ -15,12 +15,12 @@
 
 <footer class="actions">
 
-  <button {{action 'resendInvoice' order}}>
+  <button {{action 'resendInvoice' model}}>
     <span>Resend invoice</span>
   </button>
 
-  {{#unless order.refunded}}
-    <button {{action 'refundOrder' order}}>
+  {{#unless model.refunded}}
+    <button {{action 'refundOrder' model}}>
       <span>Refund order</span>
     </button>
   {{/unless}}

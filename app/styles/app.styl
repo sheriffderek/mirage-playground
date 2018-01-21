@@ -2,16 +2,17 @@
 $white = #FFFFFF
 $black = #000000
 $color = #25ACC2 // note the = instead of : for stylus variable declaration
-$highlight = yellow
+$highlight = purple
 
 $pad = 10px
 
 html
-  background: $black
-  color: $white
+  // background: $black
+  // color: $white
 
 body
-  background: $color
+  // background: $color
+  background: lighten($black, 90%)
   padding-top: $pad*6.5 // height of .site-header.outerHeight()
   font-family: 'Roboto'
 
@@ -123,7 +124,10 @@ input[type='text']
   display: flex
   flex-direction: row
   align-items: flex-end
-  height: 400px
+  height: 300px
+  background: white
+  padding-top: $pad*2
+  padding-bottom: $pad
   .area
     display: block
     cursor: pointer
@@ -163,7 +167,7 @@ fieldset
     .label, input
       display: block
   header
-    color: blue
+    color: $color
   main
     //
   footer
@@ -180,23 +184,23 @@ remove-button-styles()
   font-family: inherit
   font-weight: inherit
   letter-spacing: inherit
-  
+
 button()
   remove-button-styles()
   min-width: 200px
   padding: $pad $pad*2
-  background: $highlight
+  background: $color
   border-radius: $pad*.5
+  transition: .2s
   span
     &:after
       content: ' >'
   &:focus
-    background: wheat
-  
-  
+    transform: scale(1.05)
+    box-shadow: 0 $pad*.25 0 0 alpha($black, .1)
+
 .button
   button()
-  
 
 form
   // border: 4px solid red
@@ -207,6 +211,12 @@ form
   
 [data-ember-action], a, button, input, .link
   cursor: pointer
+  &:active
+    color: black
+    
+.link
+  &.active
+    color: red
   
 *
   -webkit-tap-highlight-color: rgba(0,0,0,0)
