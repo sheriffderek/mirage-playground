@@ -3,8 +3,9 @@ import Ember from 'ember';
 
 export default Controller.extend({
 
+  officialAccounts: Ember.computed.filterBy('model', 'isNew', false),
 
-  thisSort: ['lastName:asc'],
-  sortedByLastName: Ember.computed.sort('model', 'thisSort'),
+  thisSort: ['lastName:asc'], // $questions
+  sortedByLastName: Ember.computed.sort('officialAccounts', 'thisSort'),
 
 });

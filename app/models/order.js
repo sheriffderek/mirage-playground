@@ -44,6 +44,9 @@ export default DS.Model.extend( Validations, {
   shippingFirstName: DS.attr(),
   shippingLastName: DS.attr(),
 
+  cardExpirationMonth: DS.attr(),
+  cardExpirationYear: DS.attr(),
+
   refunded: Ember.computed.equal('statusCode', 2),
 
   place() {

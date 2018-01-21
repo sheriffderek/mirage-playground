@@ -10,6 +10,9 @@ module.exports = function(defaults) {
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
+
+  app.import("node_modules/cleave.js/dist/cleave.js");
+
   //
   // If you need to use different assets in different
   // environments, specify an object as the first parameter. That

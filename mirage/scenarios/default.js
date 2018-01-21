@@ -40,6 +40,14 @@ export default function(server) {
     orders: [],
   });
 
+  var brittneyconor = server.create('account', {
+    firstName: `Brittney`,
+    lastName: `Backos`,
+    email: ``,
+    password: `password`,
+    orders: [],
+  });
+
   var conor = server.create('account', {
     firstName: `Conor`,
     lastName: `Collins`,
@@ -48,7 +56,7 @@ export default function(server) {
     orders: [],
   });
 
-  var conor = server.create('account', {
+  var garry = server.create('account', {
     firstName: `Garry`,
     lastName: `Shandling`,
     email: `garry@shandling.com`,

@@ -27,6 +27,13 @@
         {{/if}}
       </label>
     </li>
+    <li class="thing">
+      {{forms/masked-input
+        value=expirationDate
+        placeholder='08/2020'
+        model=order
+      }}
+    </li>
   </ul>
 </main>
 
