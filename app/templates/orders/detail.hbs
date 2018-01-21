@@ -11,6 +11,14 @@
   <li class="detail"><span>time</span>: {{moment-format model.date 'h:mm A'}}</li>
   <li class="spacer"></li>
   <li class='detail'><span>order ID</span>: {{model.id}}</li>
+  <li class="spacer"></li>
+  <li>
+    <span>EXP month: </span> {{model.cardExpirationMonth}}
+  </li>
+
+  <li>
+    <span>EXP year: </span> {{model.cardExpirationYear}}
+  </li>
 </ul>
 
 <footer class="actions">
