@@ -1,0 +1,28 @@
+
+<h3>/edit - {{model.fullName}}</h3>
+
+<p>This area is just here to test out where we may use ember-changeset. For example, when we are editing a user - we wouldn't want that to change that data everywhere in the app in real-time. Edit it to see how it changes the fullName at the top. Instead, we need the account holder to edit their info - and only on 'save' have that applied. On longer forms, users may want to roll back etc.</p>
+
+<label for="a">
+  <div class="label">Add a handle to use instead of your email address</div>
+  {{input 
+    id="a"
+    value=model.handle
+    placeholder="sheriffderek"}}
+</label>
+
+<label for="b">
+  <div class="label">Change your first name</div>
+  {{input 
+    id="b"
+    value=model.firstName}}
+</label>
+
+<label for="c">
+  <div class="label">Change your last name</div>
+  {{input 
+    id="c"
+    value=model.lastName}}
+</label>
+
+<button class="button" {{action 'update' model}}>Save changes</button>

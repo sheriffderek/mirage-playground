@@ -1,0 +1,44 @@
+
+<h4>{{model.name}}</h4>
+
+<h3>/detail</h3>
+
+<ul class="detail-list">
+  <li class="detail">
+    <span>firstName: </span> {{model.firstName}}
+  </li>
+
+  <li class="detail">
+    <span>lastName: </span> {{model.lastName}}
+  </li>
+
+  <li class="detail">
+    <span>fullName: </span> {{model.fullName}}
+  </li>
+
+  <li class="detail">
+    <span>id: </span> {{model.id}}
+  </li>
+
+  <li>
+    <span>slug: </span> {{model.slug}}
+  </li>
+
+  <li>
+    <span>email: </span> {{model.email}}
+  </li>
+  
+  {{#if model.handle}}
+  <li>
+    <span>handle: </span> {{model.handle}}
+  </li>
+  {{/if}}
+</ul>
+
+{{#link-to 'accounts.detail.edit' model}}
+  <span>Edit</span>
+{{/link-to}}
+
+<button {{action 'deleteAccount' model}}>
+  <span>Delete account</span>
+</button>

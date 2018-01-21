@@ -10,9 +10,13 @@ Router.map(function() {
   // this.route('index');
   this.route('accounts', function() {
     // this.route('index'); // this is implicit (but that is confusing... 'list' is a better opion / and then you can set whatever you want the default to be as path: '/' - but index still has purpose)
-    this.route('create', {path: '/'});
-    this.route('detail', {path: '/:id'});
     this.route('list');
+    this.route('create');
+    this.route('detail', {path: '/:id'}, function() {
+      this.route('overview', {path: '/'});
+      this.route('edit');
+    });
+    
     this.route('error', {path: '/*x'}); // $question - wildcard for dynamic 404 vs error...
   });
   this.route('orders', function() {

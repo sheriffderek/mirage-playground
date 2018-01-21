@@ -7,7 +7,7 @@
   {{!-- <h1>/application</h1> --}}
 
   {{#if session.currentUser}}
-    <div>You are logged in as {{session.currentUser.name}} <button {{action 'accountSignOut'}}>Sign out</button></div>
+    <div>You are logged in as {{session.currentUser.firstName}} <button {{action 'accountSignOut'}}>Sign out</button></div>
   {{/if}}
 
   <nav class="main-menu">

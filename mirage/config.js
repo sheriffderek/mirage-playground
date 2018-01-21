@@ -28,6 +28,7 @@ export default function() {
   this.post('/accounts');
   this.get('/accounts/:id');
   this.del('/accounts/:id');
+  this.patch('/accounts/:id');
 
   this.get('/orders');
   this.post('/orders');
