@@ -39,6 +39,22 @@ export default function(server) {
     password: `password`,
     orders: [],
   });
+
+  var conor = server.create('account', {
+    firstName: `Conor`,
+    lastName: `Collins`,
+    email: `conor@outergamut.com`,
+    password: `password`,
+    orders: [],
+  });
+
+  var conor = server.create('account', {
+    firstName: `Garry`,
+    lastName: `Shandling`,
+    email: `garry@shandling.com`,
+    password: `password`,
+    orders: [],
+  });
   // server.createList('account', 20);
 
 
