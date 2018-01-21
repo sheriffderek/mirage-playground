@@ -8,7 +8,22 @@
     <li class="thing">
       <label for="contact_email">
         <span class="label">Email address</span>
-        {{input id="contact_email" value=order.emailAddress}}
+
+{{!--         {{forms/validatable-input
+          value=order.emailAddress
+        }} --}}
+
+        {{input
+          id="contact_email"
+          value=order.emailAddress
+          focus-out=(action (mut showEmailError) true)
+        }}
+        
+        {{#if showEmailError}}
+        <div class="error">
+          {{v-get order 'emailAddress' 'message'}}
+        </div>
+        {{/if}}
       </label>
     </li>
   </ul>

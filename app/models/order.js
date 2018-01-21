@@ -1,11 +1,31 @@
 import DS from 'ember-data';
 // you can pull in objects out of other objects with destructuring...
 // import { hasMany, belongsTo } from 'ember-data/relationships';
-// BUT... that doesn't see to be much or a short-cut...
+// BUT... that doesn't seem to be much or a short-cut...
 // explain...
 import Ember from 'ember';
+import { buildValidations, validator } from 'ember-cp-validations';
 
-export default DS.Model.extend({
+const Validations = buildValidations({
+  emailAddress: [
+    validator('presence', true),
+    validator('format', { type: 'email' }),
+  ],
+  shippingFirstName: [
+    validator('presence', true),
+    validator('length', {
+      min: 4,
+    }),
+  ],
+  shippingLastName: [
+    validator('presence', true),
+    validator('length', {
+      min: 4,
+    }),
+  ],
+});
+
+export default DS.Model.extend( Validations, {
   account: DS.belongsTo('account'),
   products: DS.hasMany('product'),
   date: DS.attr('date'),

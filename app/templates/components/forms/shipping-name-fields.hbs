@@ -8,14 +8,32 @@
     <li class="thing">
       <label for="shipping_first_name">
         <span class="label">First name</span>
-        {{input id="shipping_first_name" value=order.shippingFirstName}}
+        {{input
+          id="shipping_first_name" 
+          value=order.shippingFirstName
+          focus-out=(action (mut showSfnError) true)
+        }}
+        {{#if showSfnError}}
+        <div class="error">
+          {{v-get order 'emailAddress' 'message'}}
+        </div>
+        {{/if}}
       </label>
     </li>
 
-    <li>
+    <li class="thing">
       <label for="shipping_last_name">
         <span class="label">Last name name</span>
-        {{input id="shipping_last_name" value=order.shippingLastName}}
+        {{input
+          id="shipping_last_name"
+          value=order.shippingLastName
+          focus-out=(action (mut showSlnError) true)
+        }}
+        {{#if showSlnError}}
+        <div class="error">
+          {{v-get order 'emailAddress' 'message'}}
+        </div>
+        {{/if}}
       </label>
     </li>
   </ul>
