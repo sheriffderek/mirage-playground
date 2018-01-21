@@ -3,16 +3,30 @@
 
 <form {{action 'createAccount' model on='submit'}}>
 
+  <label for="thing1">
   {{#focused-input}}
     {{input
+      id="thing1"
       class="name focused" 
-      value=model.name 
-      placeholder="Input some text here..."
+      value=model.firstName 
+      placeholder="First name"
     }}
   {{/focused-input}}
+  </label>
+
+  <label for="thing2">
+    {{input
+      id="thing2"
+      class="name focused" 
+      value=model.lastName 
+      placeholder="Last name"
+    }}
+  </label>
 
   <button type='submit'>Create account</button>
 
-  <div>{{model.slug}}</div>
+  {{#if model.slug}}
+    <div>{{model.slug}}</div>
+  {{/if}}
 </form>
 

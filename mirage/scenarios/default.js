@@ -8,8 +8,7 @@ export default function(server) {
   // server.createList('post', 10);
 
   var krishen = server.create('account', {
-    name: `Krishen Kotecha`,
-    firstName: `krishen`,
+    firstName: `Krishen`,
     lastName: `Kotecha`,
     email: `krishenk@chromadex.com`,
     password: `password`,
@@ -17,7 +16,6 @@ export default function(server) {
   });
 
   var joe = server.create('account', {
-    name: `Joe Sprankle`,
     firstName: `Joe`,
     lastName: `Sprankle`,
     email: `joes@chromadex.com`,
@@ -26,12 +24,20 @@ export default function(server) {
   });
 
   var sheriff = server.create('account', {
-    name: `Derek Wood`,
     firstName: `Derek`,
     lastName: `Wood`,
     email: `derekw@chromadex.com`,
     password: `password`,
+    handle: `sheriffderek`,
     orders: [c],
+  });
+
+  var ivy = server.create('account', {
+    firstName: `Ivy`,
+    lastName: `Reynolds`,
+    email: `ivy@ivyreynolds.photography`,
+    password: `password`,
+    orders: [],
   });
   // server.createList('account', 20);
 

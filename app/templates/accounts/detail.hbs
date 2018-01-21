@@ -1,22 +1,4 @@
 
-<h3>/detail</h3>
-
-<h4>{{model.name}}</h4>
-
-<ul class="detail-list">
-  <li class="detail">
-    <span>id: </span> {{model.id}}
-  </li>
-  <li>
-    <span>slug: </span> {{model.slug}}
-  </li>
-  <li>
-    <span>email: </span> {{model.email}}
-  </li>
-</ul>
-
-{{input value=model.email}}
-
-<button {{action 'deleteAccount' model}}>
-  <span>Delete account</span>
-</button>
+<div class="outlet account-detail-outlet">
+  {{outlet}}
+</div>

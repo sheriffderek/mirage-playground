@@ -7,20 +7,26 @@ export default DS.Model.extend({
   lastName: DS.attr('string'),
 
 
-  name: Ember.computed('firstName', 'lastName', function() {
+  fullName: Ember.computed('firstName', 'lastName', function() {
     return `${this.get('firstName')} ${this.get('lastName')}`;
   }),
 
-  slug: Ember.computed('name', function() {
-    return this.get('name').dasherize();
+  slug: Ember.computed('fullName', function() {
+    return this.get('fullName').dasherize();
   }),
 
   email: DS.attr('string'),
+
+  handle: DS.attr('string' /*, {defaultValue: this.get('email')} */), // $question
 
   orders: DS.hasMany('order'),
 
   add() {
     return this.save(); // return so we can work off of the promise in the route
+  },
+
+  update() {
+    return this.save();
   },
 
   remove(account) { // this is where I want to deal with the 'account'
