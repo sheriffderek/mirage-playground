@@ -7,7 +7,8 @@
   <li class='detail'>Placed by: {{model.shippingFirstName}} {{model.shippingLastName}}</li>
   <li class='detail'><span>statusCode</span>: {{model.statusCode}}</li>
   <li class='detail'><span>status</span>: {{model.statusMessage}}</li>
-  <li class='detail'><span>date</span>: {{model.date}}</li>
+  <li class='detail'><span>date</span>: {{moment-format model.date 'MMMM D, YYYY'}}</li>
+  <li class="detail"><span>time</span>: {{moment-format model.date 'h:mm A'}}</li>
   <li class="spacer"></li>
   <li class='detail'><span>order ID</span>: {{model.id}}</li>
 </ul>
