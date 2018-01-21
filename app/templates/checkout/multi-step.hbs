@@ -2,5 +2,10 @@
 <h3>/multi-step</h3>
 
 {{#with (changeset model (action "validate")) as |changeset|}}
-  {{liquid-outlet}}
+
+  {{log 'ch-mb' changeset}}
+
+  <div class="outlet multi-step-outlet">
+    {{liquid-outlet}}
+  </div>
 {{/with}}

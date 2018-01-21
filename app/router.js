@@ -13,18 +13,19 @@ Router.map(function() {
     this.route('create', {path: '/'});
     this.route('detail', {path: '/:id'});
     this.route('list');
-    // this.route('error'); // $question - wildcard for dynamic 404 vs error...
+    this.route('error', {path: '/*x'}); // $question - wildcard for dynamic 404 vs error...
   });
   this.route('orders', function() {
     this.route('list', {path: '/'});
     this.route('detail', {path: '/:id'}); // $question - this double :id (using it twice) can be a problem... how can I clearly demonstrate that?
+    this.route('error', {path: '/*x'}); // $question - wildcard for dynamic 404 vs error...
   });
   this.route('products');
 
   this.route('surface-area');
 
-  this.route('wild-card', {path: '/*wildcard'});
   this.route('product-detail');
+
   this.route('checkout', function() {
     this.route('standard');
     this.route('multi-step', function() {
@@ -34,6 +35,8 @@ Router.map(function() {
     });
     this.route('thank-you');
   });
+
+  this.route('wild-card', {path: '/*wildcard'});
 });
 
 export default Router;
