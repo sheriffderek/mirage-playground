@@ -1,13 +1,6 @@
 
 <h3>/standard</h3>
 
-{{#with (changeset model (action "validate")) as |changeset|}}
-
-  {{log 'ch-st' changeset}}
-
-  {{forms/full-form 
-    changeset=changeset
-    submit=(action "submit")
-    rollback=(action "rollback")
-  }}
-{{/with}}
+{{forms/full-form 
+  order=model
+}}
