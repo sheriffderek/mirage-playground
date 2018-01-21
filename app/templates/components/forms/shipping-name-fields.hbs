@@ -11,6 +11,7 @@
         {{input
           id="shipping_first_name" 
           value=order.shippingFirstName
+          class="start-here"
           focus-out=(action (mut showSfnError) true)
         }}
         {{#if showSfnError}}
@@ -27,6 +28,7 @@
         {{input
           id="shipping_last_name"
           value=order.shippingLastName
+          class="start-here"
           focus-out=(action (mut showSlnError) true)
         }}
         {{#if showSlnError}}

@@ -9,6 +9,10 @@ export default Component.extend({
   // Injected
   router: service('router'),
 
+  didInsertElement() {
+    $('.start-here').first().focus();
+  },
+
   // Actions
   actions: {
     printOrder(order) {

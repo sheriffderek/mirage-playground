@@ -13,10 +13,10 @@
     <li class="thing">
       <label for="contact_email">
         <span class="label">Email address</span>
-
         {{input
           id="contact_email"
           value=order.emailAddress
+          class="start-here"
           focus-out=(action (mut showEmailError) true)
         }}
         
