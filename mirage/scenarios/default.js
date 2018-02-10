@@ -13,6 +13,7 @@ export default function(server) {
     email: `krishenk@chromadex.com`,
     password: `password`,
     orders: [a, d],
+    subscriptions: [subA],
   });
 
   var joe = server.create('account', {
@@ -85,6 +86,13 @@ export default function(server) {
   var d = server.create('order', {
     number: 342349,
     date: new Date(),
+  });
+
+
+  var subA = server.create('subscription', {
+    type: 3,
+    typeKey: 'quarterly',
+    typeTitle: 'Quarterly',
   });
 
 

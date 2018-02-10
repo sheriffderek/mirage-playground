@@ -1,45 +1,59 @@
 
-<h4>{{model.name}}</h4>
+<h4>{{account.name}}</h4>
 
 <h3>/detail</h3>
 
 <ul class="detail-list">
   <li class="detail">
-    <span>firstName: </span> {{model.firstName}}
+    <span>firstName: </span> {{account.firstName}}
   </li>
 
   <li class="detail">
-    <span>lastName: </span> {{model.lastName}}
+    <span>lastName: </span> {{account.lastName}}
   </li>
 
   <li class="detail">
-    <span>fullName: </span> {{model.fullName}}
+    <span>fullName: </span> {{account.fullName}}
   </li>
 
   <li class="detail">
-    <span>id: </span> {{model.id}}
+    <span>id: </span> {{account.id}}
   </li>
 
   <li>
-    <span>slug: </span> {{model.slug}}
+    <span>slug: </span> {{account.slug}}
   </li>
 
   <li>
-    <span>email: </span> {{model.email}}
+    <span>email: </span> {{account.email}}
   </li>
-  
-  {{#if model.handle}}
+
+  {{#if account.handle}}
   <li>
-    <span>handle: </span> {{model.handle}}
+    <span>handle: </span> {{account.handle}}
   </li>
   {{/if}}
 
+  <aside>
+    <header>
+      <h2>Subscriptions</h2>
+    </header>
+
+    <ul class="subscription-list"> {{log 'as' account.subscriptions}}
+    {{#each account.subscriptions as |subscription|}}
+      <li class="subscription">
+        <span>{{subscription.title}}asfd</span>
+      </li>
+    {{/each}}
+    </ul>
+  </aside>
+
 </ul>
 
-{{#link-to 'accounts.detail.edit' model}}
+{{#link-to 'accounts.detail.edit' account}}
   <span>Edit</span>
 {{/link-to}}
 
-<button {{action 'deleteAccount' model}}>
+<button {{action 'deleteAccount' account}}>
   <span>Delete account</span>
 </button>

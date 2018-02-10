@@ -5,7 +5,6 @@ export default Component.extend({
 
   // Element
   tagName: 'label',
-  classNames: ['validated-input'],
   classNameBindings: ['showErrorClass:has-error', 'isValid:has-success'],
 
   //

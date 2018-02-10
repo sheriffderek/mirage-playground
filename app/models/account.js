@@ -20,6 +20,7 @@ export default DS.Model.extend({
   handle: DS.attr('string' /*, {defaultValue: this.get('email')} */), // $question
 
   orders: DS.hasMany('order'),
+  subscriptions: DS.hasMany(),
 
   add() {
     return this.save(); // return so we can work off of the promise in the route

@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import Ember from 'ember';
 
 export default Component.extend({
 
@@ -22,7 +23,7 @@ export default Component.extend({
   attributeBindings: ['style'],
 
   style: Ember.computed('state', function() {
-    return `height: ${this.get('state')}%; width: ${this.get('width')}%;`;
+    return Ember.String.htmlSafe(`height: ${this.get('state')}%; width: ${this.get('width')}%;`);
   }),
 
   click() {

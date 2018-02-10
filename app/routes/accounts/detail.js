@@ -5,7 +5,9 @@ export default Route.extend({
   // store: injected into routes by default
 
   model(urlParameters) {
-    return this.get('store').findRecord('account', urlParameters.id);
+    return this.get('store').findRecord('account', urlParameters.id, {
+      include: 'subscriptions',
+    });
   },
 
   actions: {

@@ -6,7 +6,6 @@ export default Component.extend({
 
   // Element
   tagName: 'label',
-  classNames: ['masked-input'],
 
   // Passed in
   value: null,
@@ -20,7 +19,7 @@ export default Component.extend({
 
     // for  08/2020  formatting
     const masked = new Cleave('.input', {
-      blocks: [2, 4],
+      blocks: [2, 2],
       delimiter: '/',
     });
 
@@ -30,13 +29,13 @@ export default Component.extend({
   // Functions
   divvyUpExpirationDate(value) {
     let month = value.slice(0,2);
-    let year = value.slice(2,6);
+    let year = value.slice(2,4);
     this.set('model.cardExpirationMonth', month);
     this.set('model.cardExpirationYear', year);
   },
 
   keyUp() {
-    this.divvyUpExpirationDate( this.get('cleavedValue').getRawValue() );
+    // this.divvyUpExpirationDate( this.get('cleavedValue').getRawValue() );
   },
 
   // Life cycle

@@ -5,5 +5,5 @@ export default DS.Model.extend({
   type: DS.attr('string'),
   typeKey: DS.attr('string'),
   typeTitle: DS.attr('string'),
-  account: DS.belongsTo('account'),
+  account: DS.belongsTo(),
 });
