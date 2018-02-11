@@ -3,6 +3,8 @@ import Ember from 'ember';
 
 export default DS.Model.extend({
 
+  orders: DS.hasMany(),
+
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),
 
@@ -18,10 +20,6 @@ export default DS.Model.extend({
   email: DS.attr('string'),
 
   handle: DS.attr('string' /*, {defaultValue: this.get('email')} */), // $question
-
-  orders: DS.hasMany('order'),
-  subscriptions: DS.hasMany('subscription'),
-  paymentMethods: DS.hasMany('paymentMethod'),
 
   add() {
     return this.save(); // return so we can work off of the promise in the route

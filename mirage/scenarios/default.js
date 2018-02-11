@@ -8,13 +8,20 @@ export default function(server) {
 
   // server.createList('post', 10);
 
+
+  var orderA = server.create('order');
+  var orderB = server.create('order');
+  var orderC = server.create('order');
+  var orderD = server.create('order');
+  var orderE = server.create('order');
+  var orderF = server.create('order');
+
   server.create('account', {
     firstName: `Krishen`,
     lastName: `Kotecha`,
     email: `krishenk@chromadex.com`,
     password: `password`,
-    orders: [exampleOrder],
-    subscriptions: [subA],
+    orders: [orderA, orderB],
   });
 
   server.create('account', {
@@ -22,7 +29,7 @@ export default function(server) {
     lastName: `Sprankle`,
     email: `joes@chromadex.com`,
     password: `password`,
-    orders: [],
+    orders: [orderC],
   });
 
   server.create('account', {
@@ -31,40 +38,40 @@ export default function(server) {
     email: `derekw@chromadex.com`,
     password: `password`,
     handle: `sheriffderek`,
-    orders: [],
+    orders: [orderD, orderE, orderF],
   });
 
-  server.create('account', {
-    firstName: `Ivy`,
-    lastName: `Reynolds`,
-    email: `ivy@ivyreynolds.photography`,
-    password: `password`,
-    orders: [],
-  });
+  // server.create('account', {
+  //   firstName: `Ivy`,
+  //   lastName: `Reynolds`,
+  //   email: `ivy@ivyreynolds.photography`,
+  //   password: `password`,
+  //   orders: [],
+  // });
 
-  server.create('account', {
-    firstName: `Brittney`,
-    lastName: `Backos`,
-    email: ``,
-    password: `password`,
-    orders: [],
-  });
+  // server.create('account', {
+  //   firstName: `Brittney`,
+  //   lastName: `Backos`,
+  //   email: ``,
+  //   password: `password`,
+  //   orders: [],
+  // });
 
-  server.create('account', {
-    firstName: `Conor`,
-    lastName: `Collins`,
-    email: `conor@outergamut.com`,
-    password: `password`,
-    orders: [],
-  });
+  // server.create('account', {
+  //   firstName: `Conor`,
+  //   lastName: `Collins`,
+  //   email: `conor@outergamut.com`,
+  //   password: `password`,
+  //   orders: [],
+  // });
 
-  server.create('account', {
-    firstName: `Garry`,
-    lastName: `Shandling`,
-    email: `garry@shandling.com`,
-    password: `password`,
-    orders: [],
-  });
+  // server.create('account', {
+  //   firstName: `Garry`,
+  //   lastName: `Shandling`,
+  //   email: `garry@shandling.com`,
+  //   password: `password`,
+  //   orders: [],
+  // });
   // server.createList('account', 20);
 
   var css = server.create('tag', {
@@ -97,12 +104,9 @@ export default function(server) {
     tags: [js],
   });
 
-  server.createList('order', 10);
+  // server.createList('order', 10);
 
-  var exampleOrder = server.create('order', {
-    number: 100,
-    name: 'Order #100',
-  })
+
 
 
   var subA = server.create('subscription', {
@@ -110,6 +114,7 @@ export default function(server) {
     typeKey: 'quarterly',
     typeTitle: 'Quarterly',
   });
+
 
 
   server.create('area', {

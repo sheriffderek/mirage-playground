@@ -1,10 +1,10 @@
 
 export default function(){
 
-  // this.transition(
-  //   this.use('crossFade'),
-  //   this.reverse('crossFade')
-  // );
+  this.transition(
+    this.use('crossFade'),
+    this.reverse('crossFade')
+  );
 
   this.transition(
     this.fromRoute('checkout.multi-step.contact-email'),

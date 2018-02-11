@@ -5,7 +5,9 @@ export default Route.extend({
   // store: injected into routes by default
 
   model() {
-    return this.get('store').findAll('order');
+    return this.get('store').findAll('order', {
+      include: 'account',
+    });
   },
 
 });
