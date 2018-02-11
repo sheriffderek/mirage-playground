@@ -1,7 +1,12 @@
 
 {{#each accounts as |account|}} {{log account}}
   <li class="account">
-    <h4>{{account.lastName}}, {{account.firstName}}</h4>
+    <h4>
+      <span>{{account.lastName}}, {{account.firstName}}</span>
+      {{#if account.orders}}
+        <span>({{account.orders.length}})</span>
+      {{/if}}
+    </h4>
 
     <div class="actions">
       {{#link-to 'accounts.detail' account}}
