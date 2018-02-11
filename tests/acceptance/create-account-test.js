@@ -10,3 +10,11 @@ test('visiting /accounts/create', function(assert) {
     assert.equal(currentURL(), '/accounts/create');
   });
 });
+
+test('creating an account', function(assert) {
+  visit('/accounts/create');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/accounts/create');
+  });
+});
