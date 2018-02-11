@@ -1,0 +1,18 @@
+
+<h2>Posts:</h2>
+
+<ul class="post-list">
+  {{#each model as |post|}}
+    <li class="post">
+      <span>{{post.title}}</span>
+
+      <ul class="tag-list">
+        {{#each post.tags as |tag|}}
+          <li class="tag">
+            <span>{{tag.name}}</span>
+          </li>
+        {{/each}}
+      </ul>
+    </li>
+  {{/each}}
+</ul>

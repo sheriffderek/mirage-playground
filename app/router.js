@@ -8,6 +8,10 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   // this.route('index');
+
+  this.route('posts');
+  this.route('tags');
+  
   this.route('accounts', function() {
     // this.route('index'); // this is implicit (but that is confusing... 'list' is a better opion / and then you can set whatever you want the default to be as path: '/' - but index still has purpose)
     this.route('list');
@@ -41,6 +45,7 @@ Router.map(function() {
   });
 
   this.route('wild-card', {path: '/*wildcard'});
+
 });
 
 export default Router;

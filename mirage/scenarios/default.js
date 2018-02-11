@@ -1,5 +1,6 @@
 export default function(server) {
 
+  window.server = server;
   /*
     Seed your development database using your factories.
     This data will not be loaded in your tests.
@@ -12,7 +13,7 @@ export default function(server) {
     lastName: `Kotecha`,
     email: `krishenk@chromadex.com`,
     password: `password`,
-    orders: [a, d],
+    orders: [exampleOrder],
     subscriptions: [subA],
   });
 
@@ -21,7 +22,7 @@ export default function(server) {
     lastName: `Sprankle`,
     email: `joes@chromadex.com`,
     password: `password`,
-    orders: [b],
+    orders: [],
   });
 
   server.create('account', {
@@ -30,7 +31,7 @@ export default function(server) {
     email: `derekw@chromadex.com`,
     password: `password`,
     handle: `sheriffderek`,
-    orders: [c],
+    orders: [],
   });
 
   server.create('account', {
@@ -66,27 +67,42 @@ export default function(server) {
   });
   // server.createList('account', 20);
 
-
-
-  var a = server.create('order', {
-    number: 89473986,
-    date: new Date(),
+  var css = server.create('tag', {
+    name: 'CSS',
+    slug: 'css',
   });
 
-  var b = server.create('order', {
-    number: 230894,
-    date: new Date(),
+  var js = server.create('tag', {
+    name: 'JavaScript',
+    slug: 'javascript',
   });
 
-  var c = server.create('order', {
-    number: 2349876,
-    date: new Date(),
+  var elixir = server.create('tag', {
+    name: 'Elixir',
+    slug: 'elixir',
   });
 
-  var d = server.create('order', {
-    number: 342349,
-    date: new Date(),
+  server.create('post', {
+    title: 'Cats and dogs',
+    tags: [js, css],
   });
+
+  server.create('post', {
+    title: 'Suds and buds',
+    tags: [css, elixir],
+  });
+
+  server.create('post', {
+    title: 'Captain merica',
+    tags: [js],
+  });
+
+  server.createList('order', 10);
+
+  var exampleOrder = server.create('order', {
+    number: 100,
+    name: 'Order #100',
+  })
 
 
   var subA = server.create('subscription', {

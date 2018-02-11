@@ -36,4 +36,7 @@ export default function() {
   this.patch('/orders/:id');
 
   this.get('/areas');
+
+  this.get('/posts');
+  this.get('/tags');
 }

@@ -1,0 +1,10 @@
+
+<h2>Tags:</h2>
+
+<ul class="tag-list">
+  {{#each model as |tag|}}
+    <li class="tag">
+      <span>{{tag.name}}</span> <span>({{tag.posts.length}})</span>
+    </li>
+  {{/each}}
+</ul>
