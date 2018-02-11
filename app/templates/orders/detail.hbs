@@ -1,36 +1,40 @@
 
 <h3>/detail</h3>
 
-<h4>Order #{{model.id}}</h4>
+<h4>Order #{{order.id}}</h4>
 
 <ul class='detail-list'>
-  <li class='detail'>Placed by: {{model.shippingFirstName}} {{model.shippingLastName}}</li>
-  <li class='detail'><span>statusCode</span>: {{model.statusCode}}</li>
-  <li class='detail'><span>status</span>: {{model.statusMessage}}</li>
-  <li class='detail'><span>date</span>: {{moment-format model.date 'MMMM D, YYYY'}}</li>
-  <li class="detail"><span>time</span>: {{moment-format model.date 'h:mm A'}}</li>
+  <li class='detail'>Placed by: {{order.shippingFirstName}} {{order.shippingLastName}}</li>
+  <li class='detail'><span>statusCode</span>: {{order.statusCode}}</li>
+  <li class='detail'><span>status</span>: {{order.statusMessage}}</li>
+  <li class='detail'><span>date</span>: {{moment-format order.date 'MMMM D, YYYY'}}</li>
+  <li class="detail"><span>time</span>: {{moment-format order.date 'h:mm A'}}</li>
   <li class="spacer"></li>
-  <li class='detail'><span>order ID</span>: {{model.id}}</li>
+  <li class='detail'><span>order ID</span>: {{order.id}}</li>
   <li class="spacer"></li>
   <li>
-    <span>EXP month: </span> {{model.cardExpirationMonth}}
+    <span>EXP month: </span> {{order.cardExpirationMonth}}
   </li>
 
   <li>
-    <span>EXP year: </span> {{model.cardExpirationYear}}
+    <span>EXP year: </span> {{order.cardExpirationYear}}
   </li>
 </ul>
 
 <footer class="actions">
 
-  <button {{action 'resendInvoice' model}}>
+  <button {{action 'resendInvoice' order}}>
     <span>Resend invoice</span>
   </button>
 
-  {{#unless model.refunded}}
-    <button {{action 'refundOrder' model}}>
+  {{#unless order.refunded}}
+    <button {{action 'refundOrder' order}}>
       <span>Refund order</span>
     </button>
   {{/unless}}
+
+  <div class="associated-account">
+    {{order.account}}
+  </div>
 
 </footer>

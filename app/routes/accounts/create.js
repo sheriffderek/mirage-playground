@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import Ember from 'ember';
 
 export default Route.extend({
 
@@ -16,14 +17,20 @@ export default Route.extend({
     createAccount(account) {
       account.add() // uses the function from the 'account' model... ( is add() too simple? )
         .then( (account)=> {
-          console.log(`"${account.data.name}" account was created.`); // $question - why 'data' here?
+          Ember.Logger.info(`Account "${account.id}" created.`); // $question - discuss getting 'slug' or something here
+          // this.get('store').findRecord('account', account.id)
+          //   .then( (thing)=> {
+          //     console.log('name', thing);
+          //   })
+          // ;
+          // data vs attributes vs _attributes
           this.transitionTo('accounts.detail', account); // send them to the page - with the model to set the id in the dymanic segment
         })
         .catch( (error)=> {
-          console.log(`catch error: ${error.message}`);
+          Ember.Logger.error(`catch error: ${error.message}`);
         })
         .finally( ()=> {
-          console.log(`createAccount(account) complete`);
+          Ember.Logger.info(`createAccount(account) ran`);
         })
       ;
     },

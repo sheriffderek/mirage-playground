@@ -4,13 +4,12 @@ import { inject as service } from '@ember/service';
 export default Service.extend({
 
   cookies: service('cookies'),
-  store: service('store'),
+  store: service(), // don't need to keep the name if the same as the attribute
 
   currentUser: null,
 
   init() {
-    this._super(...arguments);
-    console.log(`init`);
+    this._super(...arguments); // 'gather' operator ('rest operator')
     const currentUserId = this.get('cookies').read('currentUserId');
     if (currentUserId) {
       this.get('store').findRecord('account', currentUserId)

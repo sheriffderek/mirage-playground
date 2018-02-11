@@ -20,7 +20,8 @@ export default DS.Model.extend({
   handle: DS.attr('string' /*, {defaultValue: this.get('email')} */), // $question
 
   orders: DS.hasMany('order'),
-  subscriptions: DS.hasMany(),
+  subscriptions: DS.hasMany('subscription'),
+  paymentMethods: DS.hasMany('paymentMethod'),
 
   add() {
     return this.save(); // return so we can work off of the promise in the route
@@ -31,7 +32,7 @@ export default DS.Model.extend({
   },
 
   remove(account) { // this is where I want to deal with the 'account'
-    console.log(`remove() in 'account' account`);
+    Ember.Logger.log(`remove() in 'account' account`);
     const userConfirmed = confirm(`Are you sure you want to delete the ${account.data.name} record?`);
     if (userConfirmed) {
       return this.destroyRecord(); // talk about delete record here...

@@ -1,7 +1,6 @@
 import Component from '@ember/component';
 import Ember from 'ember';
 import $ from 'jquery';
-// const { $, run, computed } = Ember;
 // import { inject as service } from '@ember/service';
 
 export default Ember.Component.extend({
@@ -22,7 +21,7 @@ export default Ember.Component.extend({
     this._windowScroll = Ember.run.bind(this, 'onWindowScroll');
     $(window).on('scroll', this._windowScroll);
     // this.set('triggerPosition', this.$().offset().top);
-    this.get('resizeService').on('didResize', (event) => {
+    this.get('resizeService').on('didResize', (/*event*/)=> {
       if (window.innerWidth > 600) {
         return this.set('largeScreen', true);
       }

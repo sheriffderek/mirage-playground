@@ -2,6 +2,7 @@ import Application from '@ember/application';
 import Resolver from './resolver';
 import loadInitializers from 'ember-load-initializers';
 import config from './config/environment';
+import Ember from 'ember';
 
 const App = Application.extend({
   modulePrefix: config.modulePrefix,
@@ -11,7 +12,7 @@ const App = Application.extend({
 
 
 
-
+// default component tag-name and css class
 Ember.Component.reopen({
 
   tagName: 'aside',

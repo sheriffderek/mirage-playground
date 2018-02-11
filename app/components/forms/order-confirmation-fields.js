@@ -1,5 +1,7 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
+import Ember from 'ember';
+import $ from 'jquery';
 
 export default Component.extend({
 
@@ -16,13 +18,12 @@ export default Component.extend({
   // Actions
   actions: {
     printOrder(order) {
-      console.log('order: ', order);
+      Ember.Logger.log('order: ', order);
     },
     saveOrder(order) {
-      var betterNameHere = this;
       return order.save()
-        .then( function(response) {
-          betterNameHere.get('router').transitionTo('orders');
+        .then( (/*response*/)=> {
+          this.get('router').transitionTo('orders');
         })
       ;
     },

@@ -28,6 +28,7 @@ const Validations = buildValidations({
 export default DS.Model.extend( Validations, {
   account: DS.belongsTo('account'),
   products: DS.hasMany('product'),
+  subscriptions: DS.hasMany('description'),
   date: DS.attr('date'),
 
   statusCode: DS.attr('string', {defaultValue: 1}),

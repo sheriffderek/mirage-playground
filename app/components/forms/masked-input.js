@@ -18,7 +18,7 @@ export default Component.extend({
   didInsertElement() {
 
     // for  08/2020  formatting
-    const masked = new Cleave('.input', {
+    var masked = new Cleave('.input', {
       blocks: [2, 2],
       delimiter: '/',
     });
@@ -28,8 +28,8 @@ export default Component.extend({
 
   // Functions
   divvyUpExpirationDate(value) {
-    let month = value.slice(0,2);
-    let year = value.slice(2,4);
+    var month = value.slice(0,2);
+    var year = value.slice(2,4);
     this.set('model.cardExpirationMonth', month);
     this.set('model.cardExpirationYear', year);
   },

@@ -1,6 +1,7 @@
 module.exports = {
-  globals: {
+  "globals": { // $question - why in quotes?
     server: true,
+    "Cleave": true,
   },
   root: true,
   parserOptions: {

@@ -6,7 +6,7 @@ export default Route.extend({
 
   model(urlParameters) {
     return this.get('store').findRecord('account', urlParameters.id, {
-      include: 'subscriptions',
+      include: 'subscriptions, orders',
     });
   },
 
@@ -14,14 +14,14 @@ export default Route.extend({
     deleteAccount(account) {
       account.remove(account)
         .then( ()=> { // $question -
-          console.log('then...');
+          // console.log('then...');
           this.transitionTo('accounts.list');
         })
         .catch( ()=> {
-          console.log('catch......');
+          // console.log('catch......');
         })
         .finally( ()=> {
-          console.log('finally...');
+          // console.log('finally...');
         })
       ;
     },

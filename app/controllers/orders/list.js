@@ -3,7 +3,9 @@ import Ember from 'ember';
 
 export default Controller.extend({
 
-  officialOrders: Ember.computed.filterBy('model', 'isNew', false),
+  order: Ember.computed.alias('model'),
+
+  officialOrders: Ember.computed.filterBy('order', 'isNew', false),
 
   sortByDate: ['date:desc'],
   ordersByDate: Ember.computed.sort('officialOrders', 'sortByDate'),

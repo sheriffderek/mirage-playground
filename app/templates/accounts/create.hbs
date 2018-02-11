@@ -6,7 +6,7 @@
   <label for="thing1">
   {{#focused-input}}
     {{input
-      id="thing1"
+      id="newFirstName"
       class="name focused" 
       value=model.firstName 
       placeholder="First name"
@@ -16,7 +16,7 @@
 
   <label for="thing2">
     {{input
-      id="thing2"
+      id="newLastName"
       class="name focused" 
       value=model.lastName 
       placeholder="Last name"
@@ -25,8 +25,5 @@
 
   <button type='submit'>Create account</button>
 
-  {{#if model.slug}}
-    <div>{{model.slug}}</div>
-  {{/if}}
 </form>
 

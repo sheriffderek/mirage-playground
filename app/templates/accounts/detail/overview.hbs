@@ -34,19 +34,21 @@
   </li>
   {{/if}}
 
+  {{#if account.subscriptions}}
   <aside>
     <header>
       <h2>Subscriptions</h2>
     </header>
 
-    <ul class="subscription-list"> {{log 'as' account.subscriptions}}
+    <ul class="subscription-list"> {{log 'a' account}}
     {{#each account.subscriptions as |subscription|}}
       <li class="subscription">
-        <span>{{subscription.title}}asfd</span>
+        <span>{{subscription.title}}...</span>
       </li>
     {{/each}}
     </ul>
   </aside>
+  {{/if}}
 
 </ul>
 
