@@ -10,6 +10,7 @@
       class="name focused" 
       value=model.firstName 
       placeholder="First name"
+      data-test-first-name=''
     }}
   {{/focused-input}}
   </label>
@@ -20,10 +21,18 @@
       class="name focused" 
       value=model.lastName 
       placeholder="Last name"
+      data-test-last-name=''
     }}
   </label>
 
-  <button type='submit'>Create account</button>
+  {{allFieldsAddressed}} {{hi}}
+
+  <button type='submit'
+    disabled={{allFieldsAddressed}}
+    data-test-create-button
+  >
+    Create account
+  </button>
 
 </form>
 

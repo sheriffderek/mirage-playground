@@ -14,7 +14,35 @@ test('visiting /accounts/create', function(assert) {
 test('creating an account', function(assert) {
   visit('/accounts/create');
 
+  // check records
+
+  fillIn("[data-test-first-name]", 'Derek');
+  fillIn("[data-test-last-name]", 'Wood');
+
+  click('[data-test-create-button]');
+
+  // compare records + get ID to check page transition?
+
   andThen(function() {
+    // transitions to account overview page
+    assert.equal(currentURL(), '/accounts/1');
+  });
+});
+
+test('only creates account with all fields', function(assert) {
+  visit('/accounts/create');
+
+  // check records
+
+  fillIn("[data-test-first-name]", 'Derek');
+  fillIn("[data-test-last-name]", '');
+
+  click('[data-test-create-button]');
+
+  // compare records + get ID to check page transition?
+
+  andThen(function() {
+    // transitions to account overview page
     assert.equal(currentURL(), '/accounts/create');
   });
 });

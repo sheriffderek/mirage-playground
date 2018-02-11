@@ -8,8 +8,14 @@ import { buildValidations, validator } from 'ember-cp-validations';
 
 const Validations = buildValidations({
   emailAddress: [
-    validator('presence', true),
-    validator('format', { type: 'email' }),
+    validator('presence', {
+      presence: true,
+      message: 'gotta put something here'
+    }),
+    validator('format', {
+      type: 'email',
+      message: `That's not an email...`,
+    }),
   ],
   shippingFirstName: [
     validator('presence', true),

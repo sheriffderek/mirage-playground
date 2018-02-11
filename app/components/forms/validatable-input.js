@@ -7,9 +7,10 @@ export default Component.extend({
   tagName: 'label',
   classNameBindings: ['showErrorClass:has-error', 'isValid:has-success'],
 
-  //
+  // Passed in
   model: null,
   value: null,
+  label: null,
 
   type: 'text',
   valuePath: '', // $question

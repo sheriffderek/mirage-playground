@@ -13,8 +13,14 @@ export default Route.extend({
     });
   },
 
+
+
+  // trying to check for field values // $questions about controller vs route
+  allFieldsAddressed: Ember.computed.and('model.firstName', 'model.lastName'),
+
   actions: {
     createAccount(account) {
+
       account.add() // uses the function from the 'account' model... ( is add() too simple? )
         .then( (account)=> {
           Ember.Logger.info(`Account "${account.id}" created.`); // $question - discuss getting 'slug' or something here
