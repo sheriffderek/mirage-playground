@@ -34,7 +34,11 @@
   {{/unless}}
 
   <div class="associated-account">
-    Account for: {{order.account.slug}}
+    Account for:
+
+    {{#link-to 'accounts.detail.overview' order.account.id}}
+      {{order.account.email}}
+    {{/link-to}}
   </div>
 
 </footer>

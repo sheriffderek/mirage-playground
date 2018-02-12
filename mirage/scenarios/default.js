@@ -8,6 +8,46 @@ export default function(server) {
 
   // server.createList('post', 10);
 
+  var starterKit = server.create('product', {
+    title: "Starter Kit",
+  });
+
+  var byTheBottle = server.create('product', {
+    title: "By the bottle",
+  });
+
+  // var monthly = server.create('product', {
+  //   title: "Every month",
+  // });
+
+  // var quarterly = server.create('product', {
+  //   title: "Every 3 months",
+  // });
+
+  // var yearly = server.create('product', {
+  //   title: "Annually",
+  // });
+
+  var visa1 = server.create('payment-method', {
+    type: 'visa',
+    expirationMonth: '05',
+    expirationYear: '23',
+    lastFour: '0028',
+  });
+
+  var visa2 = server.create('payment-method', {
+    type: 'visa',
+    expirationMonth: '04',
+    expirationYear: '19',
+    lastFour: '0978',
+  });
+
+  var amex1 = server.create('payment-method', {
+    type: 'amex',
+    expirationMonth: '09',
+    expirationYear: '21',
+    lastFour: '3454',
+  });
 
   var orderA = server.create('order');
   var orderB = server.create('order');
@@ -16,12 +56,35 @@ export default function(server) {
   var orderE = server.create('order');
   var orderF = server.create('order');
 
+  // $note - if these are after* accounts... no go
+  var subA = server.create('subscription', {
+    type: 3,
+    typeName: 'Quarterly',
+  });
+
+  var subB = server.create('subscription', {
+    type: 1,
+    typeName: 'Monthly',
+  });
+
+  var subC = server.create('subscription', {
+    type: 1,
+    typeName: 'Monthly',
+  });
+
+  var subD = server.create('subscription', {
+    type: 1,
+    typeName: 'Monthly',
+  });
+
   server.create('account', {
     firstName: `Krishen`,
     lastName: `Kotecha`,
     email: `krishenk@chromadex.com`,
     password: `password`,
     orders: [orderA, orderB],
+    subscriptions: [subA, subC],
+    paymentMethods: [visa1],
   });
 
   server.create('account', {
@@ -30,6 +93,8 @@ export default function(server) {
     email: `joes@chromadex.com`,
     password: `password`,
     orders: [orderC],
+    subscriptions: [subB],
+    paymentMethods: [visa2, amex1],
   });
 
   server.create('account', {
@@ -41,37 +106,15 @@ export default function(server) {
     orders: [orderD, orderE, orderF],
   });
 
-  // server.create('account', {
-  //   firstName: `Ivy`,
-  //   lastName: `Reynolds`,
-  //   email: `ivy@ivyreynolds.photography`,
-  //   password: `password`,
-  //   orders: [],
-  // });
+  server.create('account', {
+    firstName: `Brittney`,
+    lastName: `Backos`,
+    email: ``,
+    password: `password`,
+    orders: [],
+    subscriptions: [subD]
+  });
 
-  // server.create('account', {
-  //   firstName: `Brittney`,
-  //   lastName: `Backos`,
-  //   email: ``,
-  //   password: `password`,
-  //   orders: [],
-  // });
-
-  // server.create('account', {
-  //   firstName: `Conor`,
-  //   lastName: `Collins`,
-  //   email: `conor@outergamut.com`,
-  //   password: `password`,
-  //   orders: [],
-  // });
-
-  // server.create('account', {
-  //   firstName: `Garry`,
-  //   lastName: `Shandling`,
-  //   email: `garry@shandling.com`,
-  //   password: `password`,
-  //   orders: [],
-  // });
   // server.createList('account', 20);
 
   var css = server.create('tag', {
@@ -109,11 +152,6 @@ export default function(server) {
 
 
 
-  var subA = server.create('subscription', {
-    type: 3,
-    typeKey: 'quarterly',
-    typeTitle: 'Quarterly',
-  });
 
 
 

@@ -30,6 +30,13 @@ export default function() {
   this.del('/accounts/:id');
   this.patch('/accounts/:id');
 
+  this.get('/products');
+  // this.get('/subscriptions');
+  // this.get('/payment-methods');
+  // this.post('/payment-methods');
+  // this.get('/orders/:id');
+  // this.patch('/orders/:id');
+
   this.get('/orders');
   this.post('/orders');
   this.get('/orders/:id');

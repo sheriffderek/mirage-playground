@@ -4,6 +4,8 @@ import Ember from 'ember';
 export default DS.Model.extend({
 
   orders: DS.hasMany(),
+  subscriptions: DS.hasMany(),
+  paymentMethods: DS.hasMany(),
 
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),

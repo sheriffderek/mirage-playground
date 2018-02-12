@@ -39,10 +39,66 @@
   </li>
   {{/if}}
 
+  
+  <aside>
+    <header>
+      <h4>Subscriptions:</h4>
+    </header>
+  
+    {{#if account.subscriptions}}
+      <ul class="subscription-list">
+      {{#each account.subscriptions as |subscription|}}
+        <li class="subscription">
+          <header>{{subscription.typeName}} <span>ID#{{subscription.number}}</span></header>
+          <button>Change interval</button>
+          <button>Pause</button>
+          <button>Cancel</button>
+        </li>
+      {{/each}}
+      </ul>
+    {{else}}
+      <p><em>You do not currently have any running subscriptions</em></p>
+    {{/if}}
+  </aside>
+
+
+  <aside>
+    <header>
+      <h4>Payment methods:</h4>
+    </header>
+  
+    {{#if account.paymentMethods}}
+      <ul class="subscription-list">
+      {{#each account.paymentMethods as |paymentMethod|}}
+        <li class="subscription">
+          <header>
+            {{paymentMethod.type}} 
+            <div>
+              EXP: {{paymentMethod.expirationMonth}}/{{paymentMethod.expirationMonth}}
+              #...{{paymentMethod.lastFour}}
+            </div>
+          </header>
+          
+          <footer class="actions">
+            <button>Make default</button>
+            <button>Update information</button>
+            <button>Delete this payment method</button>
+          </footer>
+        </li>
+      {{/each}}
+      </ul>
+    {{else}}
+      <p><em>You do not currently have any payment methods</em></p>
+    {{/if}}
+
+    <footer><button>Add payment method</button></footer>
+  </aside>
+
+
   {{#if account.orders}}
   <aside>
     <header>
-      <h4>Order history</h4>
+      <h4>Order history:</h4>
     </header>
 
     <ul class="order-list">

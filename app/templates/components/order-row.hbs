@@ -1,6 +1,11 @@
 
 <header>
-  #{{order.id}} {{order.statusMessage}} / {{order.account.email}}
+  #{{order.id}} {{order.statusMessage}}
+  <span class="email">
+    {{#link-to 'accounts.detail.overview' order.account.id}}
+      {{order.account.email}}
+    {{/link-to}}
+  </span>
 </header>
 
 <footer class="actions">

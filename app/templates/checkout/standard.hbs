@@ -1,6 +1,25 @@
 
 <h3>/standard</h3>
 
-{{forms/full-form 
-  order=model
-}}
+
+<form class="standard-form" onsubmit="return false">
+  
+  {{forms/order-option-fields 
+    order=order
+    products=products
+  }}
+
+  {{forms/contact-email-fields 
+    order=order
+  }}
+
+  {{forms/shipping-name-fields 
+    order=order
+  }}
+
+  {{forms/order-confirmation-fields 
+    order=order
+  }}
+
+</form>
+

@@ -18,6 +18,15 @@ body
   padding-top: $pad*6.5 // height of .site-header.outerHeight()
   font-family: 'Roboto'
 
+figure
+  margin: 0
+  display: block
+  max-width: 100%
+  img
+    display: block
+    width: 100%
+    height: auto
+
 .page-section
   //
   .inner-w
@@ -43,21 +52,37 @@ remove-list-styles()
   // border: 1px solid alpha($black, .2)
   border-radius: $pad*.5
   padding: $pad*.25
-  border: 1px solid blue
+  // border: 1px solid blue
   &:not('.link')
     margin-bottom: $pad
 
 .ember-application .outlet, body > .ember-view
-  border: 3px solid alpha($white, .5)
+  // border: 3px solid alpha($white, .5)
   border-radius: $pad*.5
   padding: $pad*.5
+  box-shadow: inset 2px 2px 5px alpha($black, .4)
+  background: alpha($black, .05)
+  padding: $pad
+// .outlet
+//   background: red
+//   .outlet
+//     background: blue
+//     .outlet
+//       background: green
 
 .ember-application .component
-  border: 1px solid red
+  // background: alpha($black, .2)
+  padding: $pad*.5
+  box-shadow: 3px 3px 0px 0px alpha($black, .2)
+  // margin: $pad
+  // margin-bottom: $pad*2
+  background: alpha($white, .2)
   &.page-section
-    border: 1px solid blue
+    background: alpha($black, .2)
   &.link-to
-    border: 1px solid orange
+    background: alpha($white, .4)
+    box-shadow: 2 2 2px 3px alpha($black, .5)
+    display: inline-block
 
 a
   display: block
@@ -91,9 +116,13 @@ em
 
 
 .main-menu
+  margin-top: $pad
   .item-list
     remove-list-styles()
     display: flex
+    flex-wrap: wrap
+  .item
+    margin-right: $pad
 
 .account-list
   .account
@@ -217,7 +246,7 @@ button()
 form
   // border: 1px solid red
   &.standard-form
-    border: 1px solid blue
+    // border: 1px solid blue
   input[type='text']
     padding: $pad
     // font-size: inherit
@@ -255,3 +284,29 @@ form
 *
   -webkit-tap-highlight-color: rgba(0,0,0,0)
   -webkit-tap-highlight-color: transparent // For some Androids
+
+
+.product-list
+  remove-list-styles()
+  display: flex
+  flex-direction: row
+  // justify-content: space-between
+  .product
+    margin-right: $pad*2
+  .image
+    max-width: 120px
+    background: gray
+    img
+      opacity: 0
+    
+
+.order-list
+  .order
+    margin-bottom: $pad
+  .email
+    opacity: .3
+
+
+
+
+

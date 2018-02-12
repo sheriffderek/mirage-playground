@@ -1,6 +1,7 @@
 
 <h2>/accounts</h2>
 
+{{#if loggedIn}}
 <nav class="main-menu">
   <ul class="item-list">
     <li class="item">
@@ -8,6 +9,9 @@
     </li>
   </ul>
 </nav>
+{{else}}
+  <p>Sign in to create accounts</p>
+{{/if}}
 
 <section>
   <div class="outlet accounts-outlet">{{outlet}}</div>

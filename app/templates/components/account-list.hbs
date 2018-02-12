@@ -3,8 +3,10 @@
   <li class="account">
     <h4>
       <span>{{account.lastName}}, {{account.firstName}}</span>
-      {{#if account.orders}}
-        <span>({{account.orders.length}})</span>
+      {{#if account.subscriptions}}
+        <span><em>({{account.subscriptions.length}}) subscriptions</em></span>
+      {{else}}
+        <span><em>inactive</em></span>
       {{/if}}
     </h4>
 

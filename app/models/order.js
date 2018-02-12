@@ -20,7 +20,7 @@ const Validations = buildValidations({
   shippingFirstName: [
     validator('presence', true),
     validator('length', {
-      min: 4,
+      min: 2,
     }),
   ],
   shippingLastName: [
@@ -47,7 +47,7 @@ export default DS.Model.extend( Validations, {
     }
   }),
 
-  emailAddress: DS.attr(),
+  emailAddress: DS.attr(), // these should really just be on the account
   shippingFirstName: DS.attr(),
   shippingLastName: DS.attr(),
 
