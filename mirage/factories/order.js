@@ -7,4 +7,5 @@ export default Factory.extend({
   dateOrdered() {
     return new Date();
   },
+  statusCode: 0,
 });

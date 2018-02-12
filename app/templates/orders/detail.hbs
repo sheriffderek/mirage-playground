@@ -4,7 +4,7 @@
 <h4>Order #{{order.id}}</h4>
 
 <ul class='detail-list'>
-  <li class='detail'>Placed by: {{order.shippingFirstName}} {{order.shippingLastName}}</li>
+  <li class='detail'>Placed by: {{order.account.fullName}} {{order.shippingLastName}}</li>
   <li class='detail'><span>statusCode</span>: {{order.statusCode}}</li>
   <li class='detail'><span>status</span>: {{order.statusMessage}}</li>
   <li class='detail'><span>date</span>: {{moment-format order.date 'MMMM D, YYYY'}}</li>
@@ -33,9 +33,8 @@
     </button>
   {{/unless}}
 
+  <br /> <br /> <br />
   <div class="associated-account">
-    Account for:
-
     {{#link-to 'accounts.detail.overview' order.account.id}}
       {{order.account.email}}
     {{/link-to}}

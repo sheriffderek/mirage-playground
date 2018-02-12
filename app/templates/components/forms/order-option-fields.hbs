@@ -2,7 +2,23 @@
 <ul class="product-list">
   {{#each products as |product|}}
     <li class="product">
-      {{product-listing product=product}}
+      {{product-listing 
+        product=product 
+        select=(action 'selectProduct')
+      }}
     </li>
   {{/each}}
 </ul>
+
+<output class="basket">
+  <header>Basket</header>
+  {{#if order.products}}
+  <ul class="product-list">
+    {{#each order.products as |product|}}
+      <li class="product">
+        {{product-listing product=product}}
+      </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+</output>

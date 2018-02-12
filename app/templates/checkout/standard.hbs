@@ -2,12 +2,16 @@
 <h3>/standard</h3>
 
 
-<form class="standard-form" onsubmit="return false">
+<form 
+  class="standard-form" 
+  onsubmit="return false">
   
   {{forms/order-option-fields 
     order=order
     products=products
   }}
+
+  {{#unless loggedIn}}
 
   {{forms/contact-email-fields 
     order=order
@@ -21,5 +25,6 @@
     order=order
   }}
 
-</form>
+  {{/unless}}
 
+</form>

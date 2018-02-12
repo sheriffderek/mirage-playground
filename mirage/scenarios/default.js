@@ -82,6 +82,7 @@ export default function(server) {
     lastName: `Kotecha`,
     email: `krishenk@chromadex.com`,
     password: `password`,
+    handle: `@realdonaldglover`,
     orders: [orderA, orderB],
     subscriptions: [subA, subC],
     paymentMethods: [visa1],
@@ -93,6 +94,7 @@ export default function(server) {
     email: `joes@chromadex.com`,
     password: `password`,
     orders: [orderC],
+    handle: `bar-fight`,
     subscriptions: [subB],
     paymentMethods: [visa2, amex1],
   });

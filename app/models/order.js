@@ -34,7 +34,9 @@ const Validations = buildValidations({
 export default DS.Model.extend( Validations, {
 
   account: DS.belongsTo(),
+  products: DS.hasMany(),
 
+  number: DS.attr(),
   date: DS.attr('date'),
 
   statusCode: DS.attr('string', {defaultValue: 1}),
@@ -43,7 +45,7 @@ export default DS.Model.extend( Validations, {
     if (code === 2) {
       return `Order refunded`;
     } else {
-      return ``;
+      return `A OK`;
     }
   }),
 
@@ -56,16 +58,31 @@ export default DS.Model.extend( Validations, {
 
   refunded: Ember.computed.equal('statusCode', 2),
 
+  select(product) {
+    this.get('products').pushObject(product);
+  },
+
+  removeProduct(product) {
+    alert(`Should remove this product from order`);
+  },
+
   place() {
-    return this.save();
+    return this.save()
+      .then( ()=> {
+        // add subscription to the account
+        // add order to account history
+      })
+    ;
   },
 
   refund() {
-    alert(`Send PATCH request to update this order as 'refunded' + do the refunding`);
+    alert(`Send PATCH request to update this order as 'refunded' + do the refunding via the API.`);
     return this.set('statusCode', 2);
   },
 
   resendInvoice() {
-    alert('Invoice {invoice number} sent to {account email}');
+    var orderNumber = this.get('number');
+    var email = this.get('account.email');
+    alert(`Invoice #${orderNumber} is sent to ${email} by API.`);
   },
 });
