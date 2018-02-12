@@ -8,11 +8,11 @@ export default function(server) {
 
   // server.createList('post', 10);
 
-  var starterKit = server.create('product', {
+  server.create('product', {
     title: "Starter Kit",
   });
 
-  var byTheBottle = server.create('product', {
+  server.create('product', {
     title: "By the bottle",
   });
 

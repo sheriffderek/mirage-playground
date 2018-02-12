@@ -10,7 +10,6 @@ export default Component.extend({
     selectProduct(product) {
       var products = this.get('order.products');
       products.pushObject(product);
-      console.log('ooo', products);
     },
   },
 });

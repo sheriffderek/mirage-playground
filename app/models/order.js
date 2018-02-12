@@ -62,7 +62,7 @@ export default DS.Model.extend( Validations, {
     this.get('products').pushObject(product);
   },
 
-  removeProduct(product) {
+  removeProduct(/*product*/) {
     alert(`Should remove this product from order`);
   },
 

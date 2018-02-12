@@ -5,7 +5,6 @@ export default DS.Model.extend({
   number: DS.attr(),
   type: DS.attr(),
   typeName: DS.attr(),
-  type: DS.attr('string'),
   typeKey: DS.attr('string'),
   typeTitle: DS.attr('string'),
   dateOrdered: DS.attr('date'),

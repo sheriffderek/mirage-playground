@@ -8,11 +8,7 @@ export default Component.extend({
     },
 
     resendInvoice(order) {
-      order.resendInvoice()
-        .then( (order)=> {
-          console.log('sss', order);
-        })
-      ;
+      order.resendInvoice();
     },
   },
 });
