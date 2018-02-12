@@ -4,7 +4,7 @@
 <header class="page-section page-header">
 <div class="inner-w">
 
-  {{!-- <h1>/application</h1> --}}
+  <h1>/application</h1>
 
   {{#if session.currentUser}}
     <div>You are logged in as {{session.currentUser.firstName}} <button {{action 'accountSignOut'}}>Sign out</button></div>
@@ -18,18 +18,18 @@
       <li class="item">
         {{link-to 'Order list' 'orders.list' class="link"}}
       </li>
-{{!--       <li class="item">
+      <li class="item">
         {{link-to 'Surface area' 'surface-area' class="link"}}
-      </li> --}}
+      </li>
       <li class="item">
         {{link-to 'Purchase' 'product-detail' class="link"}}
       </li>
-{{!--       <li class="item">
+      <li class="item">
         {{link-to "Posts" 'posts' class="link"}}
       </li>
       <li class="item">
         {{link-to "Tags" 'tags' class="link"}}
-      </li> --}}
+      </li>
     </ul>
   </nav>
 
