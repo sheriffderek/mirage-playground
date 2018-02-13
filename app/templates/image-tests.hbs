@@ -1,0 +1,68 @@
+
+<p>Goal: only load images when they'll actually be shown on the screen. Only after loaded / fade them in. Maybe 2 page hights away? Also, depending on screen size - pull in a differen src option of medium and large. This isn't meant to be a smoke-and-mirrors. Next up... how to deal with background images. Absolute cover divs?</p>
+
+<p>if animate=true - animate in when in viewport+ - but if not / check 4000px ahead to preload - and hopefully beat scroll?</p>
+
+<div class="images">
+
+  <ul class="item-list">
+    <li class="item">
+      {{aware-image
+        src="https://placehold.it/800"
+        getMediumAt=700
+        getLargeAt=1000
+        getExtraLargeAt=1400
+      }}
+    </li>
+    <li class="item">
+      {{aware-image 
+        src="https://placehold.it/800"
+      }}
+    </li>
+    <li class="item">
+      {{aware-image
+        src="https://placehold.it/800"
+        animate=true
+      }}
+    </li>
+    <li class="item">
+      {{aware-image 
+        src="https://placehold.it/800"
+      }}
+    </li>
+    <li class="item">
+      {{aware-image
+        src="https://placehold.it/800"
+        animate=true
+      }}
+    </li>
+    <li class="item">
+      {{aware-image 
+        src="https://placehold.it/800"
+      }}
+    </li>
+    <li class="item">
+      {{aware-image
+        src="https://placehold.it/800"
+        animate=true
+      }}
+    </li>
+    <li class="item">
+      {{aware-image 
+        src="https://placehold.it/800"
+      }}
+    </li>
+    <li class="item">
+      {{aware-image
+        src="https://placehold.it/800"
+        animate=true
+      }}
+    </li>
+    <li class="item">
+      {{aware-image 
+        src="https://placehold.it/800"
+      }}
+    </li>
+  </ul>
+
+</div>

@@ -311,7 +311,33 @@ form
   .email
     opacity: .3
 
+.images
+  .item-list
+    //
+  .item
+    margin-bottom: $pad*2
 
+.image.aware-image
+  position: relative
+  opacity: 0
+  transform: translate(0,0)
+  transition: all .5s, opacity .2s, transform 1s
+  // background: black
+  img
+    transition: .5s
+    opacity: .4
 
+  &.visible
+    opacity: 1
+    background: wheat
+  &.animated
+    transform: translate(30%, -20%)
+    background: lightblue
+  &:hover
+    background: lightgreen
+
+.images
+  .image
+    max-width: 200px
 
 

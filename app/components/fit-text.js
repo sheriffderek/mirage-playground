@@ -1,5 +1,8 @@
 import Component from '@ember/component';
 import $ from 'jquery';
+// should I use the original jQuery version?
+// should I just paste this in here: https://github.com/adactio/FitText.js/blob/master/fittext.js
+// is there a better 'ember' way?
 
 export default Component.extend({
 
@@ -12,6 +15,10 @@ export default Component.extend({
   max: '300px',
 
   didInsertElement() {
+
+  // Ember.run.schedule('afterRender', function() { ... })
+  // Should I be using this ^ ?
+
     $( this.$() ).fitText(this.get('compression'), {
       minFontSize: this.get('min'),
       maxFontSize: this.get('max'),
@@ -19,7 +26,7 @@ export default Component.extend({
   },
 
   willDestroyElement() {
-    //
+    // do I need to destroy the plugin?
   },
 
 });

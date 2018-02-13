@@ -11,6 +11,7 @@ I have no idea where to even start debugging this.
 ## Things to learn
 
 - General architecture
+- Best way to do small-screen menus
 - Discuss components with 3rd party JavaScript - should I make the fit-text component an addon?
 - Ember window size aware / ember-resize - can services not be injected into services?
 - Build a context aware image component that can search for appropriate sources
