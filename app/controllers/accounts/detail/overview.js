@@ -11,6 +11,7 @@ export default Controller.extend({
       // Should take you to a route - or bring in an elsewhere modal or something
       var newPaymentMethod = this.get('store').createRecord('payment-method', {
         type: 'amex',
+        nickname: 'Example nickname',
         // how does ID creation work here? Does it need to be saved?
       });
       var paymentMethods = this.get('account.paymentMethods');

@@ -72,7 +72,7 @@
       {{#each account.paymentMethods as |paymentMethod|}}
         <li class="subscription">
           <header>
-            {{paymentMethod.type}} 
+            {{paymentMethod.nickname}}: {{paymentMethod.type}} 
             <div>
               EXP: {{paymentMethod.expirationMonth}}/{{paymentMethod.expirationMonth}}
               #...{{paymentMethod.lastFour}}
