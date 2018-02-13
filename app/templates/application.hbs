@@ -4,7 +4,9 @@
 <header class="page-section page-header">
 <div class="inner-w">
 
-  {{!-- <h1>/application</h1> --}}
+  {{#fit-text class="headline" min='32px' max='60px'}}
+    /application
+  {{/fit-text}}
 
   {{#if session.currentUser}}
     <div>You are logged in as {{session.currentUser.firstName}} <button {{action 'accountSignOut'}}>Sign out</button></div>

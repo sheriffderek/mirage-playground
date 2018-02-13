@@ -3,14 +3,23 @@ import $ from 'jquery';
 
 export default Component.extend({
 
+  // Element
+  tagName: 'h1',
+
+  // Options
   compression: 1,
-  minFontSize: '16px',
-  maxFontSize: '120px',
+  min: '16px',
+  max: '300px',
 
   didInsertElement() {
-    this.$().fitText(this.get('compression'), {
-      minFontSize: this.get('minFontSize'),
-      maxFontSize: this.get('maxFontSize'),
+    $( this.$() ).fitText(this.get('compression'), {
+      minFontSize: this.get('min'),
+      maxFontSize: this.get('max'),
     });
   },
+
+  willDestroyElement() {
+    //
+  },
+
 });
