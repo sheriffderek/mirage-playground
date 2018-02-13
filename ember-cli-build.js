@@ -12,6 +12,7 @@ module.exports = function(defaults) {
   // output files.
 
   app.import("node_modules/cleave.js/dist/cleave.js");
+  app.import("node_modules/fittextjs/index.js");
 
   //
   // If you need to use different assets in different
