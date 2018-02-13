@@ -18,4 +18,4 @@ I have no idea where to even start debugging this.
 - Learn more about when to worry about fastboot and when to ignore it. We just want the SEO value - and don't ever expect anyone to visit our site without JavaScript
 - Learn about environments. How to build the site with Mirage, but then in production use the real endpoints
 - How to only show a component in 'development' and not 'production'
--
+- Lets talk about 'views' and how they fit in these days / at least conceptually

@@ -39,4 +39,9 @@ export default DS.Model.extend({
     }
     return; // $question - .then is not a function if not confirmed / explain
   },
+
+  addPaymentMethod() {
+    alert('add payment method...');
+  },
+
 });

@@ -9,13 +9,13 @@
 </h3>
 
 <ul class="detail-list">
-  <li class="detail">
+{{!--   <li class="detail">
     <span>firstName: </span> {{account.firstName}}
   </li>
 
   <li class="detail">
     <span>lastName: </span> {{account.lastName}}
-  </li>
+  </li> --}}
 
   <li class="detail">
     <span>fullName: </span> {{account.fullName}}
@@ -80,9 +80,9 @@
           </header>
           
           <footer class="actions">
-            <button>Make default</button>
-            <button>Update information</button>
-            <button>Delete this payment method</button>
+            <button {{action 'setAsDefaultPaymentMethod' paymentMethod}}>Make default</button>
+            <button {{action 'editPaymentMethod' paymentMethod}}>Update information</button>
+            <button {{action 'deletePaymentMethod' paymentMethod}}>Delete this payment method</button>
           </footer>
         </li>
       {{/each}}
@@ -91,7 +91,10 @@
       <p><em>You do not currently have any payment methods</em></p>
     {{/if}}
 
-    <footer><button>Add payment method</button></footer>
+    <footer>
+      <button {{action 'addPaymentMethod'}}>
+        Add payment method
+      </button></footer>
   </aside>
 
 

@@ -33,9 +33,7 @@ export default function() {
   this.get('/products');
   // this.get('/subscriptions');
   // this.get('/payment-methods');
-  // this.post('/payment-methods');
-  // this.get('/orders/:id');
-  // this.patch('/orders/:id');
+  this.post('/payment-methods');
 
   this.get('/orders');
   this.post('/orders');

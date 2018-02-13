@@ -30,6 +30,7 @@ export default function(server) {
 
   var visa1 = server.create('payment-method', {
     type: 'visa',
+    nickname: 'Personal Wells Fargo',
     expirationMonth: '05',
     expirationYear: '23',
     lastFour: '0028',
@@ -37,6 +38,7 @@ export default function(server) {
 
   var visa2 = server.create('payment-method', {
     type: 'visa',
+    nickname: 'Business Visa',
     expirationMonth: '04',
     expirationYear: '19',
     lastFour: '0978',
@@ -44,6 +46,7 @@ export default function(server) {
 
   var amex1 = server.create('payment-method', {
     type: 'amex',
+    nickname: 'Delta Sky Miles',
     expirationMonth: '09',
     expirationYear: '21',
     lastFour: '3454',

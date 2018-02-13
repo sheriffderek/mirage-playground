@@ -19,7 +19,6 @@ Ember.Component.reopen({
   classNames: ['component'],
 
   init() {
-
     this._super(...arguments);
     try {
       let arr = this.toString().match(/@component:.+?:/),
