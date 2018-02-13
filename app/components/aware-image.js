@@ -16,6 +16,7 @@ export default Component.extend(InViewportMixin, ResizeAware, {
   // Image options
   defaultSrc: `blank.png`,
   src: null,
+  imageSrc: null,
 
   // State
   loaded: null,
@@ -64,9 +65,30 @@ export default Component.extend(InViewportMixin, ResizeAware, {
     Ember.Logger.log('didExitViewport()')
   },
 
+  contextSize: null,
+
+  setSrc(windowWidth) {
+    if (windowWidth > 900) {
+      this.set('contextSize', "large");
+    } else if (windowWidth > 600) {
+      this.set('contextSize', "medium");
+    } else {
+      this.set('contextSize', "small");
+    }
+  },
+
+  init() {
+    this._super(...arguments);
+    this.get('resizeService').on('didResize', (event)=> {
+      this.setSrc(window.innerWidth); // this should happen in a service... just one place / not for every one of these components...
+    }).trigger('didResize');
+  },
+
   debouncedDidResize(width, height, evt) {
     Ember.Logger.log(`Debounced Resize! ${width}x${height}`);
   },
+
+
 
   click() {
     this.toggleProperty('animated');
@@ -75,13 +97,19 @@ export default Component.extend(InViewportMixin, ResizeAware, {
   classNameBindings: ['viewportEntered:visible', 'animated:animated'],
 
   //
-  appropriateImageSrc: Ember.computed('src', function() {
+  appropriateImageSrc: Ember.computed('src', 'contextSize', function() {
     var src = this.get('src');
-    // if (windowBiggerThanB) {
-    //   // return large
-    // } else if (windowBiggerThanA) {
-    //   // return medium
-    // }
+    var halved = src.split('.');
+    var firstHalf = halved[0];
+    var secondHalf = halved[1];
+
+    var contextSize = this.get('contextSize');
+
+    if (contextSize === 'large') {
+      return `${firstHalf}-large.${secondHalf}`;
+    } else if (contextSize === 'medium') {
+      return `${firstHalf}-medium.${secondHalf}`;
+    }
     return src;
   }),
 });
